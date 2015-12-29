@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.3.0
+------
+
+* * 230c1ca Upgrade maven-pmd-plugin to 3.6
+* * ca82b4d Only use javadoc, source and deploy plugins in release profile
+
 0.2.0
 ------
 
