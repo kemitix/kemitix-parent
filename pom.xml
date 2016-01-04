@@ -298,6 +298,20 @@
                     </rules>
                 </configuration>
             </plugin><!-- jacoco-maven-plugin -->
+
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>highwheel-maven</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>analyse</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin><!-- highwheel-maven -->
         </plugins>
     </build>
 
