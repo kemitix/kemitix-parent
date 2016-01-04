@@ -159,6 +159,17 @@ produces cross-referenced HTML pages of your source code.
 
 No configuration applied beyond the defaults.
 
+## Highwheel Plugin
+
+The [Highwheel Plugin](https://github.com/hcoles/highwheel)
+generates a report for packages and classes at `target/highwheel/index.html`
+that highlights where there are cyclic dependencies between packages and between
+classes.
+
+### Configuration
+
+The plugin will `analyse` the project during the `verify` phase.
+
 # Distribution Management
 
 Remote repositories are provided for the Sonatype Nexus Snapshots and Nexus Release
