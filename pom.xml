@@ -4,7 +4,7 @@
 
     <groupId>net.kemitix</groupId>
     <artifactId>kemitix-parent</artifactId>
-    <version>0.3.0</version>
+    <version>0.4.0</version>
     <packaging>pom</packaging>
 
     <name>Kemitix Parent</name>
@@ -61,23 +61,21 @@
             </activation>
             <build>
                 <plugins>
+                    <!-- plugin sequence: javadoc, sources, gpg, deploy -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
-                        <configuration>
-                            <passphrase>${gpg.passphrase}</passphrase>
-                        </configuration>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.10.3</version>
                         <executions>
                             <execution>
-                                <id>sign-artifacts</id>
+                                <id>attach-javadocs</id>
                                 <phase>verify</phase>
                                 <goals>
-                                    <goal>sign</goal>
+                                    <goal>jar</goal>
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin><!-- maven-gpg-plugin -->
+                    </plugin><!-- maven-javadoc-plugin -->
 
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -96,18 +94,21 @@
 
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.10.3</version>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <configuration>
+                            <passphrase>${gpg.passphrase}</passphrase>
+                        </configuration>
                         <executions>
                             <execution>
-                                <id>attach-javadocs</id>
+                                <id>sign-artifacts</id>
                                 <phase>verify</phase>
                                 <goals>
-                                    <goal>jar</goal>
+                                    <goal>sign</goal>
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin><!-- maven-javadoc-plugin -->
+                    </plugin><!-- maven-gpg-plugin -->
 
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -298,6 +299,20 @@
                     </rules>
                 </configuration>
             </plugin><!-- jacoco-maven-plugin -->
+
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>highwheel-maven</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>analyse</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin><!-- highwheel-maven -->
         </plugins>
     </build>
 
