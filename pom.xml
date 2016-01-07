@@ -322,10 +322,12 @@
                     <basePackage>net.kemitix</basePackage>
                 </configuration>
                 <executions>
-                    <phase>validate</phase>
-                    <goals>
-                        <goal>digraph</goal>
-                    </goals>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>digraph</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin><!-- digraph-dependency-maven-plugin -->
         </plugins>
