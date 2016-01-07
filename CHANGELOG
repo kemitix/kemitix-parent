@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.4.0
+------
+
+* Add Highwheel build plugin for dependency reporting
+* Fix Javadoc and Sources jars not signed correctly during deploy
+
 0.3.0
 ------
 
