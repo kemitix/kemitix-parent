@@ -170,6 +170,17 @@ classes.
 
 The plugin will `analyse` the project during the `verify` phase.
 
+## Digraph Dependency Plugin
+
+The [Digraph Dependency Plugin](https://github.com/kemitix/digraph-dependency-maven-plugin)
+generates a DOT file diagram showing the dependencies between packages in a project.
+
+### Configuration
+
+The plugin will generate the `target/digraph.dot` file during the `verify` phase.
+
+The plugin will filter to packages within the `net.kemitix` package namespace.
+
 # Distribution Management
 
 Remote repositories are provided for the Sonatype Nexus Snapshots and Nexus Release
