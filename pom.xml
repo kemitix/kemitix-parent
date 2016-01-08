@@ -120,6 +120,14 @@
         </profile><!-- release -->
     </profiles>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sevntu-maven</id>
+            <name>sevntu-maven</name>
+            <url>http://sevntu-checkstyle.github.io/sevntu.checkstyle/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -131,6 +139,11 @@
                             <groupId>com.puppycrawl.tools</groupId>
                             <artifactId>checkstyle</artifactId>
                             <version>6.14.1</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.github.sevntu.checkstyle</groupId>
+                            <artifactId>sevntu-checkstyle-maven-plugin</artifactId>
+                            <version>1.17.1</version>
                         </dependency>
                     </dependencies>
                 </plugin><!-- maven-checkstyle-plugin -->
