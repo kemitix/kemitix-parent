@@ -18,6 +18,9 @@ The [Maven Checkstyle Plugin](https://maven.apache.org/plugins/maven-checkstyle-
 uses the latest version of the Checkstyle library
 ([Release Notes](http://checkstyle.sourceforge.net/releasenotes.html)).
 
+Also available for you to use are the rules defined by
+[Sevntu](http://sevntu-checkstyle.github.io/sevntu.checkstyle/).
+
 <strong>Your project <em>must</em> provide a `checkstyle.xml` file in it's root
 directory.</strong> See the Checkstyle Plugin homepage for `sun_checks.xml` and
 `google_checks.xml` examples. There is a modified version of `sun_checks.xml`
