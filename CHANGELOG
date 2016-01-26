@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+0.7.0
+------
+
+* Remove release profile property activation
+* Upgrade maven-compiler-plugin to 3.5
+* Upgrade sevntu-checkstyle to 1.18.0
+* Remove digraph-dependency-maven-plugin
+
 0.6.1
 ------
 
