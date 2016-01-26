@@ -4,7 +4,7 @@
 
     <groupId>net.kemitix</groupId>
     <artifactId>kemitix-parent</artifactId>
-    <version>0.6.1</version>
+    <version>0.7.0</version>
     <packaging>pom</packaging>
 
     <name>Kemitix Parent</name>
@@ -53,12 +53,6 @@
     <profiles>
         <profile>
             <id>release</id>
-            <activation>
-                <property>
-                    <name>performRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
             <build>
                 <plugins>
                     <!-- plugin sequence: javadoc, sources, gpg, deploy -->
@@ -143,7 +137,7 @@
                         <dependency>
                             <groupId>com.github.sevntu.checkstyle</groupId>
                             <artifactId>sevntu-checkstyle-maven-plugin</artifactId>
-                            <version>1.17.1</version>
+                            <version>1.18.0</version>
                         </dependency>
                     </dependencies>
                 </plugin><!-- maven-checkstyle-plugin -->
@@ -154,7 +148,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.5</version>
                 <configuration>
                     <compilerArgs>
                         <arg>-Xlint:unchecked</arg>
@@ -326,23 +320,6 @@
                     </execution>
                 </executions>
             </plugin><!-- highwheel-maven -->
-
-            <plugin>
-                <groupId>net.kemitix</groupId>
-                <artifactId>digraph-dependency-maven-plugin</artifactId>
-                <version>0.1.2</version>
-                <configuration>
-                    <basePackage>net.kemitix</basePackage>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>digraph</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin><!-- digraph-dependency-maven-plugin -->
         </plugins>
     </build>
 
