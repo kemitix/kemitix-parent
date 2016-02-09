@@ -39,6 +39,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <kemitix.build.directory>target</kemitix.build.directory>
     </properties>
 
     <developers>
@@ -123,6 +124,7 @@
     </pluginRepositories>
 
     <build>
+        <directory>${kemitix.build.directory}</directory>
         <pluginManagement>
             <plugins>
                 <plugin>
