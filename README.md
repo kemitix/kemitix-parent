@@ -190,3 +190,12 @@ Remote repositories are provided for the Sonatype Nexus Snapshots and Nexus Rele
 Repositories. See the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html)
 for information on how to deploy your artifact the Maven Central through
 Sonatype.
+
+### Changing the Build Directory
+
+If you want to change the build directory, e.g. from your settings.xml to an SSD
+or ram drive, then set the value of the `kemitix.build.directory` to your required
+locations. e.g.
+`<properties>
+<kemitix.build.directory>/mnt/ramdrive/${project.groupId}/${project.artifactId}</kemitix.build.directory>
+</properties>`
