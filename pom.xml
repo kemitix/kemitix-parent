@@ -274,7 +274,7 @@
                 </executions>
                 <configuration>
                     <rules>
-                        <rule implementation="org.jacoco.maven.RuleConfiguration">
+                        <rule>
                             <element>CLASS</element>
                             <excludes>
                                 <exclude>*Test</exclude>
@@ -285,12 +285,12 @@
                                     <value>COVEREDRATIO</value>
                                     <minimum>0.50</minimum>
                                 </limit>
-                                <limit implementation="org.jacoco.report.check.Limit">
+                                <limit>
                                     <counter>INSTRUCTION</counter>
                                     <value>COVEREDRATIO</value>
                                     <minimum>0.80</minimum>
                                 </limit>
-                                <limit implementation="org.jacoco.report.check.Limit">
+                                <limit>
                                     <counter>CLASS</counter>
                                     <value>MISSEDCOUNT</value>
                                     <maximum>0</maximum>
