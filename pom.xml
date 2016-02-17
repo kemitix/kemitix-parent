@@ -4,7 +4,7 @@
 
     <groupId>net.kemitix</groupId>
     <artifactId>kemitix-parent</artifactId>
-    <version>0.7.1</version>
+    <version>0.8.0</version>
     <packaging>pom</packaging>
 
     <name>Kemitix Parent</name>
@@ -39,6 +39,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <kemitix.build.directory>target</kemitix.build.directory>
     </properties>
 
     <developers>
@@ -123,6 +124,7 @@
     </pluginRepositories>
 
     <build>
+        <directory>${kemitix.build.directory}</directory>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -148,7 +150,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5</version>
+                <version>3.5.1</version>
                 <configuration>
                     <compilerArgs>
                         <arg>-Xlint:unchecked</arg>
@@ -272,10 +274,11 @@
                 </executions>
                 <configuration>
                     <rules>
-                        <rule implementation="org.jacoco.maven.RuleConfiguration">
+                        <rule>
                             <element>CLASS</element>
                             <excludes>
                                 <exclude>*Test</exclude>
+                                <exclude>*IT</exclude>
                             </excludes>
                             <limits>
                                 <limit>
@@ -283,20 +286,12 @@
                                     <value>COVEREDRATIO</value>
                                     <minimum>0.50</minimum>
                                 </limit>
-                            </limits>
-                        </rule>
-                        <rule implementation="org.jacoco.maven.RuleConfiguration">
-                            <element>CLASS</element>
-                            <excludes>
-                                <exclude>*Test</exclude>
-                            </excludes>
-                            <limits>
-                                <limit implementation="org.jacoco.report.check.Limit">
+                                <limit>
                                     <counter>INSTRUCTION</counter>
                                     <value>COVEREDRATIO</value>
                                     <minimum>0.80</minimum>
                                 </limit>
-                                <limit implementation="org.jacoco.report.check.Limit">
+                                <limit>
                                     <counter>CLASS</counter>
                                     <value>MISSEDCOUNT</value>
                                     <maximum>0</maximum>

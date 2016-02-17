@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+0.8.0
+------
+
+* Allow the build directory to be overridden
+* Upgrade maven-compiler-plugin to 3.5.1
+* Clean up Jacoco configuration
+* Exclude Integration Tests from Jacoco (classes ending in *IT)
+
 0.7.1
 ------
 
