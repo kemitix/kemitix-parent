@@ -278,6 +278,7 @@
                             <element>CLASS</element>
                             <excludes>
                                 <exclude>*Test</exclude>
+                                <exclude>*IT</exclude>
                             </excludes>
                             <limits>
                                 <limit>
