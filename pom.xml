@@ -57,6 +57,10 @@
         <highwheel-maven.version>1.2</highwheel-maven.version>
         <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
         <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
+
+        <jacoco-class-line-covered-ratio>0.50</jacoco-class-line-covered-ratio>
+        <jacoco-class-instruction-covered-ratio>0.80</jacoco-class-instruction-covered-ratio>
+        <jacoco-class-missed-count-maximum>0</jacoco-class-missed-count-maximum>
     </properties>
 
     <developers>
@@ -301,17 +305,17 @@
                                 <limit>
                                     <counter>LINE</counter>
                                     <value>COVEREDRATIO</value>
-                                    <minimum>0.50</minimum>
+                                    <minimum>${jacoco-class-line-covered-ratio}</minimum>
                                 </limit>
                                 <limit>
                                     <counter>INSTRUCTION</counter>
                                     <value>COVEREDRATIO</value>
-                                    <minimum>0.80</minimum>
+                                    <minimum>${jacoco-class-instruction-covered-ratio}</minimum>
                                 </limit>
                                 <limit>
                                     <counter>CLASS</counter>
                                     <value>MISSEDCOUNT</value>
-                                    <maximum>0</maximum>
+                                    <maximum>${jacoco-class-missed-count-maximum}</maximum>
                                 </limit>
                             </limits>
                         </rule>
