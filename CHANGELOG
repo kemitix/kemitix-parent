@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+1.0.0
+------
+
+* Upgrade checkstyle to 6.17
+* Upgrade maven-project-info-reports-plugin to 2.9
+* Allow versions to be overridden using properties
+* Allow Jacoco limits to be overridden using properties
+
 0.9.0
 ------
 
