@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+1.1.0
+------
+
+* Upgrade sevntu-checkstyle-maven-plugin to 1.20.0
+* Upgrade checkstyle to 6.18
+
 1.0.0
 ------
 
