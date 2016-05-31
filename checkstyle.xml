@@ -156,8 +156,8 @@
         <module name="TodoComment"> <!-- no to do or fix me comments -->
             <property name="format" value="(TODO)|(FIXME)"/>
         </module>
-        <module name="TrailingComment"/> <!-- no endline comments (the irony!) -->
-        <module name="TypeName"/> <!-- validates class, interfacem enum and annotation names -->
+        <module name="TrailingComment"/> <!-- no end-line comments (the irony!) -->
+        <module name="TypeName"/> <!-- validates class, interface, enum and annotation names -->
         <module name="TypecastParenPad"/> <!-- no spaces in type casting parentheses -->
         <module name="UnnecessaryParentheses"/> <!-- unnecessary parentheses -->
         <module name="UnusedImports"/> <!-- checks for import that aren't used -->
@@ -166,6 +166,42 @@
         <module name="VisibilityModifier"/> <!-- visibility of class members -->
         <module name="WhitespaceAfter"/> <!-- comma, semicolon, and type cast are followed by a space -->
         <module name="WhitespaceAround"/> <!-- selected token are surrounded by a space -->
+
+        <!-- Sevntu checks -->
+        <!-- sevntu/coding -->
+        <module name="AvoidConstantAsFirstOperandInConditionCheck"/> <!-- avoid code like if(12 == value){...} -->
+        <module name="AvoidHidingCauseExceptionCheck"/> <!-- ensure exceptions are propagated as cause in subsequent exceptions -->
+        <module name="AvoidNotShortCircuitOperatorsForBooleanCheck"/> <!-- limits using of not short-circuit operators -->
+        <module name="ConfusingConditionCheck"/> <!-- prevents negation within an "if" expression if "else" is present -->
+        <module name="DiamondOperatorForVariableDefinitionCheck"/> <!-- use the diamond operator -->
+        <module name="EitherLogOrThrowCheck"/> <!-- log or throw an exception - don't do both -->
+        <module name="ForbidCCommentsInMethodsCheck"/> <!-- prevent /* C-style */ comments inside methods -->
+        <module name="ForbidReturnInFinallyBlockCheck"/> <!-- returns in finally override returns elsewhere in method -->
+        <module name="ForbidThrowAnonymousExceptionsCheck"/> <!-- only throw concrete exceptions -->
+        <module name="LogicConditionNeedOptimizationCheck"/> <!-- prevent placement of local variables and fields after call to method in logical conditionals -->
+        <module name="MapIterationInForEachLoopCheck"/> <!-- warns of unoptimised map iteration -->
+        <module name="NameConventionForJunit4TestClassesCheck"/> <!-- checks names of test classes -->
+        <module name="NoNullForCollectionReturnCheck"/> <!-- don't return null when should be an empty collection -->
+        <module name="NumericLiteralNeedsUnderscoreCheck"/> <!-- long numeric literals have underscore spacers -->
+        <module name="OverridableMethodInConstructorCheck"/> <!-- don't call overridable method from constructor -->
+        <module name="RedundantReturnCheck"/> <!-- returns at end of void methods is pointless -->
+        <module name="ReturnBooleanFromTernaryCheck"/> <!-- use value inside condition -->
+        <module name="ReturnNullInsteadOfBooleanCheck"/> <!-- Boolean is NOT a ternary state object -->
+        <module name="SimpleAccessorNameNotationCheck"/> <!-- setters and getters must match to the field of the same name and type -->
+        <module name="SingleBreakOrContinueCheck"/> <!-- avoid complicated flow control -->
+        <module name="TernaryPerExpressionCountCheck"/> <!-- prevent nested ternary expressions -->
+        <module name="UselessSingleCatchCheck"/> <!-- prevent single catch blocks that just rethrow the original exception -->
+        <module name="UselessSuperCtorCallCheck"/> <!-- detects calls to super() when not needed -->
+        <!-- sevntu/design -->
+        <module name="AvoidConditionInversionCheck"/> <!-- catch condition inversion which could be more readable -->
+        <!--<module name="ChildBlockLengthCheck"/> &lt;!&ndash; broken in sevntu 1.20 - limit child blocks to 80% of parent block &ndash;&gt;-->
+        <module name="ConstructorWithoutParamsCheck"/> <!-- Exception classes must take parameters -->
+        <module name="ForbidWildcardAsReturnTypeCheck"/> <!-- forbid <? extends|super Object> generics as return types on public, protected and package methods -->
+        <module name="NestedSwitchCheck"/> <!-- prevent nested switch statements -->
+        <module name="NoMainMethodInAbstractClassCheck"/> <!-- Forbids main methods in abstract classes -->
+        <module name="PublicReferenceToPrivateTypeCheck"/> <!-- prevent attempt to expose private type -->
+        <!-- sevntu/naming -->
+        <module name="EnumValueNameCheck"/> <!-- validate enum value format -->
     </module>
 
 </module>
