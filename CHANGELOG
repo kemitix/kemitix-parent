@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+1.2.0
+------
+
+* Add selection of sevntu-checkstyle rules to checkstyle template
+* Rewrite sample checkstyle rules definition
+* Upgrade checkstyle to 6.19
+
 1.1.0
 ------
 
