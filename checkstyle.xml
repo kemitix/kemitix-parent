@@ -199,7 +199,7 @@
         <module name="PublicReferenceToPrivateTypeCheck"/> <!-- prevent attempt to expose private type -->
         <!-- sevntu/naming -->
         <module name="EnumValueNameCheck"/> <!-- validate enum value format -->
-        <module name="UniformEnumValueCheck"/> <!-- forces enum values to all follow the same pattern as each other -->
+        <module name="UniformEnumConstantNameCheck"/> <!-- forces enum names to all follow the same pattern as each other -->
     </module>
 
 </module>
