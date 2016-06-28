@@ -28,7 +28,6 @@
         <module name="AnnotationLocation"/> <!-- annotations should be on line by themselves -->
         <module name="AnnotationUseStyle"/> <!-- annotations should only use () and named attributes when needed -->
         <module name="AnonInnerLength"/> <!-- limits anonymous inner classes to 20 lines -->
-        <module name="ArrayTrailingComma"/> <!-- arrays should have a trailing comma (unless braces are on same line)-->
         <module name="ArrayTypeStyle"/> <!-- enforce Java style arrays -->
         <module name="AtclauseOrder"/> <!-- enforce standard order for javadoc elements -->
         <module name="AvoidEscapedUnicodeCharacters"> <!-- prevent use of obscure escape codes -->
@@ -69,7 +68,6 @@
         <module name="ExplicitInitialization"/> <!-- avoid initializing a field twice to the same value -->
         <module name="FallThrough"/> <!-- checks that each switch case fall-through is commented as such -->
         <module name="FinalClass"/> <!-- class which has only private constructors is declared as final -->
-        <!--<module name="FinalLocalVariable"/> &lt;!&ndash; incompatible with lombok's val - local variables that never change must be declared final &ndash;&gt;-->
         <module name="FinalParameters"/> <!-- parameters that never change must be declared final -->
         <module name="GenericWhitespace"/> <!-- generic tokens are spaced correctly -->
         <module name="HiddenField">
@@ -81,7 +79,6 @@
         <module name="IllegalImport"/> <!-- prevent imports from the sun.* package -->
         <module name="IllegalThrows"/> <!-- prevent generic throws (i.e. Exception, Throwable, RuntimeException) -->
         <module name="IllegalType"/> <!-- prevents variables, returns or parameters of non-interface Collections classes  -->
-        <!--<module name="Indentation"/> &lt;!&ndash; incompatible with preferred indentation - correct indentation of Java code &ndash;&gt;-->
         <module name="InnerAssignment"/> <!-- prevent assignments in subexpressions (i.e. while((line = read()){}) -->
         <module name="InnerTypeLast"/> <!-- inner classes appear after methods and fields -->
         <module name="InterfaceIsType"/> <!-- interface must define method not just constants -->
@@ -202,6 +199,7 @@
         <module name="PublicReferenceToPrivateTypeCheck"/> <!-- prevent attempt to expose private type -->
         <!-- sevntu/naming -->
         <module name="EnumValueNameCheck"/> <!-- validate enum value format -->
+        <module name="UniformEnumConstantNameCheck"/> <!-- forces enum names to all follow the same pattern as each other -->
     </module>
 
 </module>
