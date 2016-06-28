@@ -1,6 +1,18 @@
 CHANGELOG
 =========
 
+1.3.0
+------
+
+* Upgrade checkstyle to 7.0
+* Upgrade maven-source-plugin to 3.0.1
+* Upgrade sevntucheckstyle to 1.21.0
+* Upgrade maven-javadoc-plugin to 2.10.4
+* Upgrade jacoco-maven-plugin to 0.7.7
+* checkstyle.xml: Remove rules from that aren't compatible with code style or with lombok
+* checkstyle.xml: Add sevntu's new UniformEnumValueCheck to checkstyle template
+* .gitignore: apply a common standard gitignore to use as template
+
 1.2.0
 ------
 
