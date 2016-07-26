@@ -33,6 +33,8 @@ nbactions.xml
 .idea/sqlDataSources.xml
 .idea/gradle.xml
 .idea/mongoSettings.xml
+.idea/checkstyle-idea.xml
+.idea/findbugs-idea.xml
 
 # Spring
 spring.log
