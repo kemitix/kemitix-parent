@@ -13,6 +13,37 @@ This Maven Parent POM several preconfigured plugins.
         <version>RELEASE</version>
     </parent>
 
+## Versions
+
+If you want to override the version or configuration values of any of the
+plugins configured by this parent, you can set the following properties to the
+desired value.
+
+property|value
+--------|-------------
+project.build.sourceEncoding|UTF-8
+project.reporting.outputEncoding|UTF-8
+kemitix.build.directory|target
+maven-javadoc-plugin.version|2.10.4
+maven-source-plugin.version|3.0.1
+maven-gpg-plugin.version|1.6
+maven-deploy-plugin.version|2.8.2
+maven-checkstyle-plugin.version|2.17
+checkstyle.version|7.1
+sevntu-checkstyle-maven-plugin.version|1.21.0
+maven-compiler-plugin.version|3.5.1
+maven-surefire-plugin.version|2.19.1
+maven-failsafe-plugin.version|2.19.1
+maven-pmd-plugin.version|3.6
+findbugs-maven-plugin.version|3.0.4
+jacoco-maven-plugin.version|0.7.7.201606060606
+highwheel-maven.version|1.2
+maven-project-info-reports-plugin.version|2.9
+maven-jxr-plugin.version|2.5
+jacoco-class-line-covered-ratio|0.50
+jacoco-class-instruction-covered-ratio|0.80
+jacoco-class-missed-count-maximum|0
+
 ## Maven Checkstyle Plugin
 
 The [Maven Checkstyle Plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/)
