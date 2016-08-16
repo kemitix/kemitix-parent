@@ -48,24 +48,21 @@ jacoco-class-missed-count-maximum|0
 
 The [Maven Checkstyle Plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/)
 uses the latest version of the Checkstyle library
-([Release Notes](http://checkstyle.sourceforge.net/releasenotes.html)).
+([Release Notes](http://checkstyle.sourceforge.net/releasenotes.html)) and the
+[Sevntu](http://sevntu-checkstyle.github.io/sevntu.checkstyle/) library.
 
-Also available for you to use are the rules defined by
-[Sevntu](http://sevntu-checkstyle.github.io/sevntu.checkstyle/).
+As from version 2.0.0 you no longer provide a `checkstyle.xml` file. Any file you
+provide will be ignored unless you re-configure the maven-checkstyle-plugin yourself.
 
-<strong>Your project <em>must</em> provide a `checkstyle.xml` file in it's root
-directory.</strong> See the Checkstyle Plugin homepage for `sun_checks.xml` and
-`google_checks.xml` examples. There is a modified version of `sun_checks.xml`
-bundled in the source jar as `checkstyle.xml`.
-
-Your build will fail on any violations or errors found. You can modify your
-`checkstyle.xml` to suite your own needs.
+The ruleset that will be used is defined in
+[kemitix-checkstyle-ruleset](https://github.com/kemitix/kemitix-checkstyle-ruleset).
+See the that project's `README.md` file for details on the ruleset.
 
 ### Configuration
 
 Ref [checkstyle:check](https://maven.apache.org/plugins/maven-checkstyle-plugin/check-mojo.html)
 
-* configLocation: checkstyle.xml
+* configLocation: [checkstyle.xml](https://github.com/kemitix/kemitix-checkstyle-ruleset/blob/master/src/main/resources/net/kemitix/checkstyle.xml)
 * consoleOutput: true
 * encoding: UTF-8
 * failOnViolation: true
