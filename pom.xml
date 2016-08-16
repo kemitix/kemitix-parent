@@ -40,6 +40,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <kemitix.build.directory>target</kemitix.build.directory>
+        <kemitix-checkstyle-ruleset.version>0.1.1</kemitix-checkstyle-ruleset.version>
 
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
@@ -162,7 +163,20 @@
                             <artifactId>sevntu-checkstyle-maven-plugin</artifactId>
                             <version>${sevntu-checkstyle-maven-plugin.version}</version>
                         </dependency>
+                        <dependency>
+                            <groupId>net.kemitix</groupId>
+                            <artifactId>kemitix-checkstyle-ruleset</artifactId>
+                            <version>${kemitix-checkstyle-ruleset.version}</version>
+                        </dependency>
                     </dependencies>
+                    <configuration>
+                        <configLocation>net/kemitix/checkstyle.xml</configLocation>
+                        <encoding>UTF-8</encoding>
+                        <consoleOutput>true</consoleOutput>
+                        <failOnViolation>true</failOnViolation>
+                        <failsOnError>true</failsOnError>
+                        <linkXRef>true</linkXRef>
+                    </configuration>
                 </plugin><!-- maven-checkstyle-plugin -->
             </plugins>
         </pluginManagement>
@@ -212,21 +226,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${maven-checkstyle-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>validate</id>
                         <phase>validate</phase>
-                        <configuration>
-                            <configLocation>checkstyle.xml</configLocation>
-                            <encoding>UTF-8</encoding>
-                            <consoleOutput>true</consoleOutput>
-                            <failOnViolation>true</failOnViolation>
-                            <failsOnError>true</failsOnError>
-                            <linkXRef>true</linkXRef>
-                        </configuration>
                         <goals>
                             <goal>check</goal>
+                            <goal>checkstyle</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -364,7 +370,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${maven-checkstyle-plugin.version}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
