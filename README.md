@@ -10,6 +10,7 @@ This Maven Parent POM several preconfigured plugins.
     <parent>
         <groupId>net.kemitix</groupId>
         <artifactId>kemitix-parent</artifactId>
+        <version>RELEASE</version>
     </parent>
 
 ## Maven Checkstyle Plugin
