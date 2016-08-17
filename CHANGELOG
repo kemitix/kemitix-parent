@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+2.0.0
+-----
+
+* Remove the maven wrapper
+* Use kemitix-checkstyle-ruleset 0.1.1
+
 1.5.0
 ------
 
