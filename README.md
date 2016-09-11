@@ -29,7 +29,7 @@ maven-source-plugin.version|3.0.1
 maven-gpg-plugin.version|1.6
 maven-deploy-plugin.version|2.8.2
 maven-checkstyle-plugin.version|2.17
-checkstyle.version|7.1
+checkstyle.version|7.1.1
 sevntu-checkstyle-maven-plugin.version|1.21.0
 kemitix-checkstyle-ruleset.version|1.0.0
 maven-compiler-plugin.version|3.5.1
