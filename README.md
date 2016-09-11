@@ -29,8 +29,9 @@ maven-source-plugin.version|3.0.1
 maven-gpg-plugin.version|1.6
 maven-deploy-plugin.version|2.8.2
 maven-checkstyle-plugin.version|2.17
-checkstyle.version|7.1
+checkstyle.version|7.1.1
 sevntu-checkstyle-maven-plugin.version|1.21.0
+kemitix-checkstyle-ruleset.version|1.0.0
 maven-compiler-plugin.version|3.5.1
 maven-surefire-plugin.version|2.19.1
 maven-failsafe-plugin.version|2.19.1
@@ -56,7 +57,7 @@ provide will be ignored unless you re-configure the maven-checkstyle-plugin your
 
 The ruleset that will be used is defined in
 [kemitix-checkstyle-ruleset](https://github.com/kemitix/kemitix-checkstyle-ruleset).
-See the that project's `README.md` file for details on the ruleset.
+See that project's `README.md` file for details on the ruleset.
 
 ### Configuration
 
