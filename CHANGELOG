@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+2.2.0
+-----
+
+* Add huntbugs 0.0.11
+* Upgrade checkstyle to 7.2
+* Upgrade sevntu-checkstyle to 1.22.0
+* Upgrade maven-compiler-plugin to 3.6.0
+* Upgrade maven-pmd-plugin to 3.7
+
 2.1.0
 ------
 
