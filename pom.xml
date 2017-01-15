@@ -74,6 +74,25 @@
         </developer>
     </developers>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>Athens-SR2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Camden.SR4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -298,6 +317,9 @@
                             <excludes>
                                 <exclude>*Test</exclude>
                                 <exclude>*IT</exclude>
+                                <exclude>*Main</exclude>
+                                <exclude>*Application</exclude>
+                                <exclude>*Configuration</exclude>
                             </excludes>
                             <limits>
                                 <limit>
