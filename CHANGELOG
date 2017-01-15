@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+2.3.0
+------
+
+* Merge in kemitix-spring-parent 2.2.0 (with upgrades)
+* Provide lombok (1.16.12)
+* Use the kemitix-checkstyle-ruleset-maven-plugin (2.0.4)
+
 2.2.0
 -----
 
