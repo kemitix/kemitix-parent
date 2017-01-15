@@ -153,6 +153,9 @@
                 <groupId>net.kemitix</groupId>
                 <artifactId>kemitix-checkstyle-ruleset-maven-plugin</artifactId>
                 <version>${kemitix-checkstyle-ruleset.version}</version>
+                <configuration>
+                    <checkstyleVersion>7.4</checkstyleVersion>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>validate</phase>
