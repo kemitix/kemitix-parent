@@ -36,7 +36,7 @@ maven-compiler-plugin.version|3.5.1
 maven-surefire-plugin.version|2.19.1
 maven-failsafe-plugin.version|2.19.1
 maven-pmd-plugin.version|3.6
-findbugs-maven-plugin.version|3.0.4
+huntbugs.version|0.0.11
 jacoco-maven-plugin.version|0.7.7.201606060606
 highwheel-maven.version|1.2
 maven-project-info-reports-plugin.version|2.9
@@ -118,14 +118,12 @@ during the `verify` phase.
 
 No configuration applied beyond the defaults.
 
-## Findbugs Maven Plugin
+## Huntbugs Maven Plugin
 
-The [Findbugs Maven Plugin](http://gleclaire.github.io/findbugs-maven-plugin/)
-runs the [Findbugs](http://findbugs.sourceforge.net/factSheet.html) code
-analysis.
+The [Huntbugs Maven Plugin](https://github.com/amaembo/huntbugs) is a
+static code analyser.
 
-Runs its [check](http://gleclaire.github.io/findbugs-maven-plugin/check-mojo.html)
-goal during the `verify` phase.
+Runs during the `compile` phase.
 
 ### Configuration
 

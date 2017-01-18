@@ -53,7 +53,6 @@
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
         <maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
-        <findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
         <huntbugs.version>0.0.11</huntbugs.version>
         <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
         <highwheel-maven.version>1.2</highwheel-maven.version>
@@ -258,27 +257,12 @@
             </plugin><!-- maven-pmd-plugin -->
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${findbugs-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>check</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin><!-- findbugs-maven-plugin -->
-
-            <plugin>
                 <groupId>one.util</groupId>
                 <artifactId>huntbugs-maven-plugin</artifactId>
                 <version>${huntbugs.version}</version>
                 <executions>
                     <execution>
-                        <phase>verify</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>huntbugs</goal>
                         </goals>
@@ -390,12 +374,6 @@
                     <linkXRef>true</linkXRef>
                 </configuration>
             </plugin><!-- maven-pmd-plugin -->
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${findbugs-maven-plugin.version}</version>
-            </plugin><!-- findbugs-maven-plugin -->
         </plugins>
     </reporting>
 
