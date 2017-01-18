@@ -353,7 +353,7 @@
                 <version>${highwheel-maven.version}</version>
                 <executions>
                     <execution>
-                        <phase>validate</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>analyse</goal>
                         </goals>
