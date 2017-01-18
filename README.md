@@ -28,10 +28,7 @@ maven-javadoc-plugin.version|2.10.4
 maven-source-plugin.version|3.0.1
 maven-gpg-plugin.version|1.6
 maven-deploy-plugin.version|2.8.2
-maven-checkstyle-plugin.version|2.17
-checkstyle.version|7.1.1
-sevntu-checkstyle-maven-plugin.version|1.21.0
-kemitix-checkstyle-ruleset.version|1.0.0
+kemitix-checkstyle-ruleset.version|2.0.4
 digraph-dependency.version|0.7.0
 maven-compiler-plugin.version|3.6.0
 maven-surefire-plugin.version|2.19.1
@@ -46,30 +43,24 @@ jacoco-class-line-covered-ratio|0.50
 jacoco-class-instruction-covered-ratio|0.80
 jacoco-class-missed-count-maximum|0
 
-## Maven Checkstyle Plugin
+## Checkstyle
 
-The [Maven Checkstyle Plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/)
-uses the latest version of the Checkstyle library
-([Release Notes](http://checkstyle.sourceforge.net/releasenotes.html)) and the
-[Sevntu](http://sevntu-checkstyle.github.io/sevntu.checkstyle/) library.
+The Checkstyle plugin is configured using the
+`kemitix-checkstyle-ruleset-maven-plugin`.
 
-As from version 2.0.0 you no longer provide a `checkstyle.xml` file. Any file you
-provide will be ignored unless you re-configure the maven-checkstyle-plugin yourself.
-
-The ruleset that will be used is defined in
-[kemitix-checkstyle-ruleset](https://github.com/kemitix/kemitix-checkstyle-ruleset).
-See that project's `README.md` file for details on the ruleset.
+The `kemitix-checkstyle-ruleset` provides five levels of checks. The
+default is set to `5-complexity`, the most strict.
 
 ### Configuration
 
-Ref [checkstyle:check](https://maven.apache.org/plugins/maven-checkstyle-plugin/check-mojo.html)
+Set the property `kemitix-checkstyle-ruleset.level` to one of the
+following values to select a less-strict ruleset:
 
-* configLocation: [checkstyle.xml](https://github.com/kemitix/kemitix-checkstyle-ruleset/blob/master/src/main/resources/net/kemitix/checkstyle.xml)
-* consoleOutput: true
-* encoding: UTF-8
-* failOnViolation: true
-* failOnError: true
-* linkXRef: true
+* 1-layout
+* 2-naming
+* 3-javadoc
+* 4-tweaks
+* 5-complexity
 
 ## Maven Compiler Plugin
 
