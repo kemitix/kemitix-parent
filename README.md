@@ -32,11 +32,11 @@ maven-checkstyle-plugin.version|2.17
 checkstyle.version|7.1.1
 sevntu-checkstyle-maven-plugin.version|1.21.0
 kemitix-checkstyle-ruleset.version|1.0.0
-maven-compiler-plugin.version|3.5.1
 digraph-dependency.version|0.7.0
+maven-compiler-plugin.version|3.6.0
 maven-surefire-plugin.version|2.19.1
 maven-failsafe-plugin.version|2.19.1
-maven-pmd-plugin.version|3.6
+maven-pmd-plugin.version|3.7
 huntbugs.version|0.0.11
 jacoco-maven-plugin.version|0.7.7.201606060606
 highwheel-maven.version|1.2
