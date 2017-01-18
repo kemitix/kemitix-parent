@@ -33,6 +33,7 @@ checkstyle.version|7.1.1
 sevntu-checkstyle-maven-plugin.version|1.21.0
 kemitix-checkstyle-ruleset.version|1.0.0
 maven-compiler-plugin.version|3.5.1
+digraph-dependency.version|0.7.0
 maven-surefire-plugin.version|2.19.1
 maven-failsafe-plugin.version|2.19.1
 maven-pmd-plugin.version|3.6
@@ -208,9 +209,9 @@ generates a DOT file diagram showing the dependencies between packages in a proj
 
 ### Configuration
 
-The plugin will generate the `target/digraph.dot` file during the `verify` phase.
+The plugin will generate the `target/digraph.dot` file during the `validate` phase.
 
-The plugin will filter to packages within the `net.kemitix` package namespace.
+Set the `digraph-dependency.basePackage` property to the root package to graph.
 
 # Distribution Management
 

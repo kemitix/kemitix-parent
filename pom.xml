@@ -45,6 +45,10 @@
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
 
         <lombok.version>1.16.12</lombok.version>
+
+        <digraph-dependency.version>0.7.0</digraph-dependency.version>
+        <digraph-dependency.basePackage>(UNSET:basePackage)</digraph-dependency.basePackage>
+
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
@@ -193,6 +197,22 @@
                     </execution>
                 </executions>
             </plugin><!-- kemitix-checkstyle-ruleset-maven-plugin -->
+            <plugin>
+                <groupId>net.kemitix</groupId>
+                <artifactId>digraph-dependency-maven-plugin</artifactId>
+                <version>${digraph-dependency.version}</version>
+                <configuration>
+                    <basePackage>${digraph-dependency.basePackage}</basePackage>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>digraph</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin><!-- digraph-dependency-maven-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
