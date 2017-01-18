@@ -104,7 +104,7 @@ runs the [PMD](http://pmd.sourceforge.net/) code analysis.
 
 Runs its [pmd](https://maven.apache.org/plugins/maven-pmd-plugin/pmd-mojo.html)
 and [cpd](https://maven.apache.org/plugins/maven-pmd-plugin/cpd-mojo.html) goals
-during the `verify` phase.
+during the `compile` phase.
 
 ### Configuration
 
@@ -138,13 +138,17 @@ For each class not excluded the Instructions Covered Ration must be at least
 Excluded from analysis:
 
 * `*Test` - test classes
+* `*IT` - integration test classes
+* `*Main` - main classes
+* `*Application` - application classes
+* `*Configuration` - (Spring) configuration classes
 
 ## Maven Source Plugin
 
 The [Maven Source Plugin](https://maven.apache.org/plugins/maven-source-plugin/)
 bundles your sources into a jar file ready for deployment.
 
-Runs its [jar-no-fork](http://gleclaire.github.io/findbugs-maven-plugin/check-mojo.html)
+Runs its [jar-no-fork](https://maven.apache.org/plugins/maven-source-plugin/jar-no-fork-mojo.html)
 goal during the `verify` phase.
 
 ### Configuration
@@ -157,7 +161,7 @@ The [Maven Javadoc Plugin](https://maven.apache.org/plugins/maven-javadoc-plugin
 generates your html javadocs and bundles them into a jar file ready for
 deployment.
 
-Runs its [jar-no-fork](http://gleclaire.github.io/findbugs-maven-plugin/check-mojo.html)
+Runs its [jar](https://maven.apache.org/plugins/maven-javadoc-plugin/jar-mojo.html)
 goal during the `verify` phase.
 
 ### Configuration
@@ -191,7 +195,7 @@ classes.
 
 ### Configuration
 
-The plugin will `analyse` the project during the `verify` phase.
+The plugin will `analyse` the project during the `compile` phase.
 
 ## Digraph Dependency Plugin
 
