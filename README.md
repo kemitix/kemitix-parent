@@ -28,7 +28,7 @@ maven-javadoc-plugin.version|2.10.4
 maven-source-plugin.version|3.0.1
 maven-gpg-plugin.version|1.6
 maven-deploy-plugin.version|2.8.2
-kemitix-checkstyle-ruleset.version|2.0.4
+kemitix-checkstyle-ruleset.version|2.1.2
 digraph-dependency.version|0.7.0
 maven-compiler-plugin.version|3.6.0
 maven-surefire-plugin.version|2.19.1
@@ -49,7 +49,8 @@ The Checkstyle plugin is configured using the
 `kemitix-checkstyle-ruleset-maven-plugin`.
 
 The `kemitix-checkstyle-ruleset` provides five levels of checks. The
-default is set to `5-complexity`, the most strict.
+default is set to `5-complexity`, the most strict. It runs during the
+`validate` phase.
 
 ### Configuration
 

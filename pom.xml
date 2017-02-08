@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <kemitix.build.directory>target</kemitix.build.directory>
-        <kemitix-checkstyle-ruleset.version>2.0.4</kemitix-checkstyle-ruleset.version>
+        <kemitix-checkstyle-ruleset.version>2.1.2</kemitix-checkstyle-ruleset.version>
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
 
         <lombok.version>1.16.12</lombok.version>
@@ -187,9 +187,6 @@
                 <groupId>net.kemitix</groupId>
                 <artifactId>kemitix-checkstyle-ruleset-maven-plugin</artifactId>
                 <version>${kemitix-checkstyle-ruleset.version}</version>
-                <configuration>
-                    <checkstyleVersion>7.4</checkstyleVersion>
-                </configuration>
                 <executions>
                     <execution>
                         <phase>validate</phase>
