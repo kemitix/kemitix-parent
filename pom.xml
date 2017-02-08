@@ -45,6 +45,8 @@
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
 
         <lombok.version>1.16.12</lombok.version>
+        <spring-platform.version>Athens-SR2</spring-platform.version>
+        <spring-cloud.version>Camden.SR4</spring-cloud.version>
 
         <digraph-dependency.version>0.7.0</digraph-dependency.version>
         <digraph-dependency.basePackage>(UNSET:basePackage)</digraph-dependency.basePackage>
@@ -82,14 +84,14 @@
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>Athens-SR2</version>
+                <version>${spring-platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Camden.SR4</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
