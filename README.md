@@ -25,7 +25,7 @@ project.build.sourceEncoding|UTF-8
 project.reporting.outputEncoding|UTF-8
 kemitix.build.directory|target
 lombok|1.16.12
-spring-platform|Athens-SR2
+spring-platform|Athens-SR3
 spring-cloud|Camden.SR5
 maven-javadoc-plugin.version|2.10.4
 maven-source-plugin.version|3.0.1
