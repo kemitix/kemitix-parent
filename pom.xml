@@ -41,10 +41,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <kemitix.build.directory>target</kemitix.build.directory>
-        <kemitix-checkstyle-ruleset.version>2.0.4</kemitix-checkstyle-ruleset.version>
+        <kemitix-checkstyle-ruleset.version>2.1.2</kemitix-checkstyle-ruleset.version>
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
 
         <lombok.version>1.16.12</lombok.version>
+        <spring-platform.version>Athens-SR2</spring-platform.version>
+        <spring-cloud.version>Camden.SR4</spring-cloud.version>
+
+        <digraph-dependency.version>0.7.0</digraph-dependency.version>
+        <digraph-dependency.basePackage>(UNSET:basePackage)</digraph-dependency.basePackage>
+
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
@@ -53,7 +59,6 @@
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
         <maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
-        <findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
         <huntbugs.version>0.0.11</huntbugs.version>
         <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
         <highwheel-maven.version>1.2</highwheel-maven.version>
@@ -79,14 +84,14 @@
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>Athens-SR2</version>
+                <version>${spring-platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Camden.SR4</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -182,9 +187,6 @@
                 <groupId>net.kemitix</groupId>
                 <artifactId>kemitix-checkstyle-ruleset-maven-plugin</artifactId>
                 <version>${kemitix-checkstyle-ruleset.version}</version>
-                <configuration>
-                    <checkstyleVersion>7.4</checkstyleVersion>
-                </configuration>
                 <executions>
                     <execution>
                         <phase>validate</phase>
@@ -194,6 +196,22 @@
                     </execution>
                 </executions>
             </plugin><!-- kemitix-checkstyle-ruleset-maven-plugin -->
+            <plugin>
+                <groupId>net.kemitix</groupId>
+                <artifactId>digraph-dependency-maven-plugin</artifactId>
+                <version>${digraph-dependency.version}</version>
+                <configuration>
+                    <basePackage>${digraph-dependency.basePackage}</basePackage>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>digraph</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin><!-- digraph-dependency-maven-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -258,27 +276,12 @@
             </plugin><!-- maven-pmd-plugin -->
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${findbugs-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>check</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin><!-- findbugs-maven-plugin -->
-
-            <plugin>
                 <groupId>one.util</groupId>
                 <artifactId>huntbugs-maven-plugin</artifactId>
                 <version>${huntbugs.version}</version>
                 <executions>
                     <execution>
-                        <phase>verify</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>huntbugs</goal>
                         </goals>
@@ -349,7 +352,7 @@
                 <version>${highwheel-maven.version}</version>
                 <executions>
                     <execution>
-                        <phase>validate</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>analyse</goal>
                         </goals>
@@ -390,12 +393,6 @@
                     <linkXRef>true</linkXRef>
                 </configuration>
             </plugin><!-- maven-pmd-plugin -->
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${findbugs-maven-plugin.version}</version>
-            </plugin><!-- findbugs-maven-plugin -->
         </plugins>
     </reporting>
 
