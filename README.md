@@ -35,7 +35,7 @@ maven-surefire-plugin.version|2.19.1
 maven-failsafe-plugin.version|2.19.1
 maven-pmd-plugin.version|3.7
 huntbugs.version|0.0.11
-jacoco-maven-plugin.version|0.7.7.201606060606
+jacoco-maven-plugin.version|0.7.9
 highwheel-maven.version|1.2
 maven-project-info-reports-plugin.version|2.9
 maven-jxr-plugin.version|2.5

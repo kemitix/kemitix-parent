@@ -60,7 +60,7 @@
         <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
         <maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
         <huntbugs.version>0.0.11</huntbugs.version>
-        <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
         <highwheel-maven.version>1.2</highwheel-maven.version>
         <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
         <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
