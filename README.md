@@ -24,20 +24,21 @@ property|value
 project.build.sourceEncoding|UTF-8
 project.reporting.outputEncoding|UTF-8
 kemitix.build.directory|target
+lombok|1.16.12
+spring-platform|Athens-SR3
+spring-cloud|Camden.SR5
 maven-javadoc-plugin.version|2.10.4
 maven-source-plugin.version|3.0.1
 maven-gpg-plugin.version|1.6
 maven-deploy-plugin.version|2.8.2
-maven-checkstyle-plugin.version|2.17
-checkstyle.version|7.1.1
-sevntu-checkstyle-maven-plugin.version|1.21.0
-kemitix-checkstyle-ruleset.version|1.0.0
-maven-compiler-plugin.version|3.5.1
+kemitix-checkstyle-ruleset.version|2.1.2
+digraph-dependency.version|0.7.0
+maven-compiler-plugin.version|3.6.1
 maven-surefire-plugin.version|2.19.1
 maven-failsafe-plugin.version|2.19.1
-maven-pmd-plugin.version|3.6
-findbugs-maven-plugin.version|3.0.4
-jacoco-maven-plugin.version|0.7.7.201606060606
+maven-pmd-plugin.version|3.7
+huntbugs.version|0.0.11
+jacoco-maven-plugin.version|0.7.9
 highwheel-maven.version|1.2
 maven-project-info-reports-plugin.version|2.9
 maven-jxr-plugin.version|2.5
@@ -45,30 +46,25 @@ jacoco-class-line-covered-ratio|0.50
 jacoco-class-instruction-covered-ratio|0.80
 jacoco-class-missed-count-maximum|0
 
-## Maven Checkstyle Plugin
+## Checkstyle
 
-The [Maven Checkstyle Plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/)
-uses the latest version of the Checkstyle library
-([Release Notes](http://checkstyle.sourceforge.net/releasenotes.html)) and the
-[Sevntu](http://sevntu-checkstyle.github.io/sevntu.checkstyle/) library.
+The Checkstyle plugin is configured using the
+`kemitix-checkstyle-ruleset-maven-plugin`.
 
-As from version 2.0.0 you no longer provide a `checkstyle.xml` file. Any file you
-provide will be ignored unless you re-configure the maven-checkstyle-plugin yourself.
-
-The ruleset that will be used is defined in
-[kemitix-checkstyle-ruleset](https://github.com/kemitix/kemitix-checkstyle-ruleset).
-See that project's `README.md` file for details on the ruleset.
+The `kemitix-checkstyle-ruleset` provides five levels of checks. The
+default is set to `5-complexity`, the most strict. It runs during the
+`validate` phase.
 
 ### Configuration
 
-Ref [checkstyle:check](https://maven.apache.org/plugins/maven-checkstyle-plugin/check-mojo.html)
+Set the property `kemitix-checkstyle-ruleset.level` to one of the
+following values to select a less-strict ruleset:
 
-* configLocation: [checkstyle.xml](https://github.com/kemitix/kemitix-checkstyle-ruleset/blob/master/src/main/resources/net/kemitix/checkstyle.xml)
-* consoleOutput: true
-* encoding: UTF-8
-* failOnViolation: true
-* failOnError: true
-* linkXRef: true
+* 1-layout
+* 2-naming
+* 3-javadoc
+* 4-tweaks
+* 5-complexity
 
 ## Maven Compiler Plugin
 
@@ -112,20 +108,18 @@ runs the [PMD](http://pmd.sourceforge.net/) code analysis.
 
 Runs its [pmd](https://maven.apache.org/plugins/maven-pmd-plugin/pmd-mojo.html)
 and [cpd](https://maven.apache.org/plugins/maven-pmd-plugin/cpd-mojo.html) goals
-during the `verify` phase.
+during the `compile` phase.
 
 ### Configuration
 
 No configuration applied beyond the defaults.
 
-## Findbugs Maven Plugin
+## Huntbugs Maven Plugin
 
-The [Findbugs Maven Plugin](http://gleclaire.github.io/findbugs-maven-plugin/)
-runs the [Findbugs](http://findbugs.sourceforge.net/factSheet.html) code
-analysis.
+The [Huntbugs Maven Plugin](https://github.com/amaembo/huntbugs) is a
+static code analyser.
 
-Runs its [check](http://gleclaire.github.io/findbugs-maven-plugin/check-mojo.html)
-goal during the `verify` phase.
+Runs during the `compile` phase.
 
 ### Configuration
 
@@ -148,13 +142,17 @@ For each class not excluded the Instructions Covered Ration must be at least
 Excluded from analysis:
 
 * `*Test` - test classes
+* `*IT` - integration test classes
+* `*Main` - main classes
+* `*Application` - application classes
+* `*Configuration` - (Spring) configuration classes
 
 ## Maven Source Plugin
 
 The [Maven Source Plugin](https://maven.apache.org/plugins/maven-source-plugin/)
 bundles your sources into a jar file ready for deployment.
 
-Runs its [jar-no-fork](http://gleclaire.github.io/findbugs-maven-plugin/check-mojo.html)
+Runs its [jar-no-fork](https://maven.apache.org/plugins/maven-source-plugin/jar-no-fork-mojo.html)
 goal during the `verify` phase.
 
 ### Configuration
@@ -167,7 +165,7 @@ The [Maven Javadoc Plugin](https://maven.apache.org/plugins/maven-javadoc-plugin
 generates your html javadocs and bundles them into a jar file ready for
 deployment.
 
-Runs its [jar-no-fork](http://gleclaire.github.io/findbugs-maven-plugin/check-mojo.html)
+Runs its [jar](https://maven.apache.org/plugins/maven-javadoc-plugin/jar-mojo.html)
 goal during the `verify` phase.
 
 ### Configuration
@@ -201,7 +199,7 @@ classes.
 
 ### Configuration
 
-The plugin will `analyse` the project during the `verify` phase.
+The plugin will `analyse` the project during the `compile` phase.
 
 ## Digraph Dependency Plugin
 
@@ -210,9 +208,9 @@ generates a DOT file diagram showing the dependencies between packages in a proj
 
 ### Configuration
 
-The plugin will generate the `target/digraph.dot` file during the `verify` phase.
+The plugin will generate the `target/digraph.dot` file during the `validate` phase.
 
-The plugin will filter to packages within the `net.kemitix` package namespace.
+Set the `digraph-dependency.basePackage` property to the root package to graph.
 
 # Distribution Management
 

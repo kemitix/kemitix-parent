@@ -1,6 +1,20 @@
 CHANGELOG
 =========
 
+2.4.0
+------
+
+* Remove findbugs (using huntbugs instead)
+* Restore digraph-dependency-maven-plugin
+* Make highwheel-maven-plugin run after compile
+* Upgrade kemitix-checkstyle-ruleset-maven-plugin to 2.1.2
+* Upgrade maven-compiler-plugin to 3.6.1
+* Upgrade jacoco-maven-plugin to 0.7.9
+* Upgrade spring-cloud dependency management to Camden.SR5
+* Upgrade spring-platform dependency management to Athens.SR3
+* Update versions in README.md
+* General updates in README.md
+
 2.3.0
 ------
 
