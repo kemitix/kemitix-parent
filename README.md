@@ -30,7 +30,7 @@ maven-gpg-plugin.version|1.6
 maven-deploy-plugin.version|2.8.2
 kemitix-checkstyle-ruleset.version|2.1.2
 digraph-dependency.version|0.7.0
-maven-compiler-plugin.version|3.6.0
+maven-compiler-plugin.version|3.6.1
 maven-surefire-plugin.version|2.19.1
 maven-failsafe-plugin.version|2.19.1
 maven-pmd-plugin.version|3.7
