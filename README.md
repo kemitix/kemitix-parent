@@ -24,6 +24,7 @@ property|value
 project.build.sourceEncoding|UTF-8
 project.reporting.outputEncoding|UTF-8
 kemitix.build.directory|target
+spring-cloud|Camden.SR5
 maven-javadoc-plugin.version|2.10.4
 maven-source-plugin.version|3.0.1
 maven-gpg-plugin.version|1.6

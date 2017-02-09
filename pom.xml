@@ -46,7 +46,7 @@
 
         <lombok.version>1.16.12</lombok.version>
         <spring-platform.version>Athens-SR2</spring-platform.version>
-        <spring-cloud.version>Camden.SR4</spring-cloud.version>
+        <spring-cloud.version>Camden.SR5</spring-cloud.version>
 
         <digraph-dependency.version>0.7.0</digraph-dependency.version>
         <digraph-dependency.basePackage>(UNSET:basePackage)</digraph-dependency.basePackage>
