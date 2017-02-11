@@ -47,6 +47,7 @@
         <lombok.version>1.16.12</lombok.version>
         <spring-platform.version>Athens-SR3</spring-platform.version>
         <spring-cloud.version>Camden.SR5</spring-cloud.version>
+        <spring-data.version>Ingalls-RELEASE</spring-data.version>
 
         <digraph-dependency.version>0.7.0</digraph-dependency.version>
         <digraph-dependency.basePackage>(UNSET:basePackage)</digraph-dependency.basePackage>
@@ -91,6 +92,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-releasetrain</artifactId>
+                <version>${spring-data.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
