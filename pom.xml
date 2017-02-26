@@ -196,7 +196,7 @@
                 <version>${kemitix-checkstyle-ruleset.version}</version>
                 <executions>
                     <execution>
-                        <phase>validate</phase>
+                        <phase>verify</phase>
                         <goals>
                             <goal>${kemitix-checkstyle-ruleset.level}</goal>
                         </goals>
