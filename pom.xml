@@ -330,6 +330,7 @@
                                 <exclude>*Main</exclude>
                                 <exclude>*Application</exclude>
                                 <exclude>*Configuration</exclude>
+                                <exclude>*Immutable*</exclude>
                             </excludes>
                             <limits>
                                 <limit>
