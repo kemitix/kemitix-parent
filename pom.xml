@@ -68,6 +68,7 @@
         <jacoco-class-line-covered-ratio>0.50</jacoco-class-line-covered-ratio>
         <jacoco-class-instruction-covered-ratio>0.80</jacoco-class-instruction-covered-ratio>
         <jacoco-class-missed-count-maximum>0</jacoco-class-missed-count-maximum>
+        <java.version>1.8</java.version>
     </properties>
 
     <developers>
@@ -229,8 +230,8 @@
                     </compilerArgs>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin><!-- maven-compiler-plugin -->
 
