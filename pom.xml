@@ -47,7 +47,7 @@
         <lombok.version>1.16.14</lombok.version>
         <spring-platform.version>Brussels-SR1</spring-platform.version>
         <spring-cloud.version>Camden.SR5</spring-cloud.version>
-        <spring-data.version>Ingalls-RELEASE</spring-data.version>
+        <spring-data.version>Ingalls-SR1</spring-data.version>
 
         <digraph-dependency.version>0.7.0</digraph-dependency.version>
         <digraph-dependency.basePackage>(UNSET:basePackage)</digraph-dependency.basePackage>
