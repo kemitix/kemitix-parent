@@ -44,8 +44,8 @@
         <kemitix-checkstyle-ruleset.version>2.2.0</kemitix-checkstyle-ruleset.version>
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
 
-        <lombok.version>1.16.12</lombok.version>
         <spring-platform.version>Athens-SR3</spring-platform.version>
+        <lombok.version>1.16.14</lombok.version>
         <spring-cloud.version>Camden.SR5</spring-cloud.version>
         <spring-data.version>Ingalls-RELEASE</spring-data.version>
 
