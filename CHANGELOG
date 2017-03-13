@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+2.6.0
+------
+
+* Upgrade Kemitix Checkstyle Ruleset to 2.2.0
+* Upgrade Lombok to 1.16.14
+* Upgrade Spring IO Platform to Brussels-SR1
+* Upgrade Spring Data to Ingalls-SR1
+* Upgrade Digraph Dependency to 0.9.0
+* Upgrade Spring Cloud to Camden.SR6
+* Specify Spring Boot version (1.5.2.RELEASE) in properties (i.e. spring-boot.version)
+
 2.5.0
 ------
 
