@@ -45,6 +45,7 @@
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
 
         <lombok.version>1.16.14</lombok.version>
+        <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
         <spring-platform.version>Brussels-SR1</spring-platform.version>
         <spring-cloud.version>Camden.SR6</spring-cloud.version>
         <spring-data.version>Ingalls-SR1</spring-data.version>
