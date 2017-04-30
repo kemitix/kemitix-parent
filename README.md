@@ -19,32 +19,34 @@ If you want to override the version or configuration values of any of the
 plugins configured by this parent, you can set the following properties to the
 desired value.
 
-property|value
---------|-------------
-project.build.sourceEncoding|UTF-8
-project.reporting.outputEncoding|UTF-8
-kemitix.build.directory|target
-lombok|1.16.12
-spring-platform|Athens-SR3
-spring-cloud|Camden.SR5
-maven-javadoc-plugin.version|2.10.4
-maven-source-plugin.version|3.0.1
-maven-gpg-plugin.version|1.6
-maven-deploy-plugin.version|2.8.2
-kemitix-checkstyle-ruleset.version|2.1.2
-digraph-dependency.version|0.7.0
-maven-compiler-plugin.version|3.6.1
-maven-surefire-plugin.version|2.19.1
-maven-failsafe-plugin.version|2.19.1
-maven-pmd-plugin.version|3.7
-huntbugs.version|0.0.11
-jacoco-maven-plugin.version|0.7.9
-highwheel-maven.version|1.2
-maven-project-info-reports-plugin.version|2.9
-maven-jxr-plugin.version|2.5
-jacoco-class-line-covered-ratio|0.50
-jacoco-class-instruction-covered-ratio|0.80
-jacoco-class-missed-count-maximum|0
+* project.build.sourceEncoding
+* project.reporting.outputEncoding
+* kemitix.build.directory
+* kemitix-checkstyle-ruleset.version
+* kemitix-checkstyle-ruleset.level
+* lombok.version
+* spring-boot.version
+* spring-platform.version
+* spring-cloud.version
+* spring-data.version
+* digraph-dependency.version
+* digraph-dependency.basePackage
+* maven-javadoc-plugin.version
+* maven-source-plugin.version
+* maven-gpg-plugin.version
+* maven-deploy-plugin.version
+* maven-compiler-plugin.version
+* maven-surefire-plugin.version
+* maven-failsafe-plugin.version
+* maven-pmd-plugin.version
+* huntbugs.version
+* jacoco-maven-plugin.version
+* highwheel-maven.version
+* maven-jxr-plugin.version
+* jacoco-class-line-covered-ratio
+* jacoco-class-instruction-covered-ratio
+* jacoco-class-missed-count-maximum
+* java.version
 
 ## Checkstyle
 

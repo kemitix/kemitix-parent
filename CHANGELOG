@@ -1,6 +1,19 @@
 CHANGELOG
 =========
 
+2.8.0
+-----
+
+* Upgrade kemitix-checkstyle-ruleset to 2.3.0
+* Upgrade lombok to 1.16.16
+* Upgrade spring-platform to Brussels-SR2
+* Upgrade spring-cloud to Dalston.RELEASE
+* Upgrade spring-data to Ingalls-SR3
+* Upgrade maven-surefire-plugin to 2.20
+* Upgrade maven-failsage-plugin to 2.20
+* Set digraph-dependency base package to `net.kemitix`
+* Stop tracking versions in README.md
+
 2.7.0
 ------
 
