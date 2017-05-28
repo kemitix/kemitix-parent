@@ -17,9 +17,9 @@
     </issueManagement>
 
     <scm>
+        <url>https://github.com/kemitix/kemitix-parent</url>
         <connection>scm:git:git@github.com:kemitix/kemitix-parent.git</connection>
         <developerConnection>scm:git:git@github.com:kemitix/kemitix-parent.git</developerConnection>
-        <url>git@github.com:kemitix/kemitix-parent.git</url>
     </scm>
 
     <url>https://github.com/kemitix/kemitix-parent</url>
