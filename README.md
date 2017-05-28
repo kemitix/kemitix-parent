@@ -25,10 +25,6 @@ desired value.
 * kemitix-checkstyle-ruleset.version
 * kemitix-checkstyle-ruleset.level
 * lombok.version
-* spring-boot.version
-* spring-platform.version
-* spring-cloud.version
-* spring-data.version
 * digraph-dependency.version
 * digraph-dependency.basePackage
 * maven-javadoc-plugin.version
