@@ -5,7 +5,7 @@
 
     <groupId>net.kemitix</groupId>
     <artifactId>kemitix-parent</artifactId>
-    <version>2.8.0</version>
+    <version>3.0.0</version>
     <packaging>pom</packaging>
 
     <name>Kemitix Parent</name>
@@ -17,9 +17,9 @@
     </issueManagement>
 
     <scm>
+        <url>https://github.com/kemitix/kemitix-parent</url>
         <connection>scm:git:git@github.com:kemitix/kemitix-parent.git</connection>
         <developerConnection>scm:git:git@github.com:kemitix/kemitix-parent.git</developerConnection>
-        <url>git@github.com:kemitix/kemitix-parent.git</url>
     </scm>
 
     <url>https://github.com/kemitix/kemitix-parent</url>
@@ -41,14 +41,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <kemitix.build.directory>target</kemitix.build.directory>
-        <kemitix-checkstyle-ruleset.version>2.3.0</kemitix-checkstyle-ruleset.version>
+        <kemitix-checkstyle-ruleset.version>3.1.0</kemitix-checkstyle-ruleset.version>
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
 
         <lombok.version>1.16.16</lombok.version>
-        <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
-        <spring-platform.version>Brussels-SR2</spring-platform.version>
-        <spring-cloud.version>Dalston.RELEASE</spring-cloud.version>
-        <spring-data.version>Ingalls-SR3</spring-data.version>
 
         <digraph-dependency.version>0.9.0</digraph-dependency.version>
         <digraph-dependency.basePackage>net.kemitix</digraph-dependency.basePackage>
@@ -60,16 +56,21 @@
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.20</maven-failsafe-plugin.version>
-        <maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
         <huntbugs.version>0.0.11</huntbugs.version>
         <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
         <highwheel-maven.version>1.2</highwheel-maven.version>
+        <pitest.version>1.2.0</pitest.version>
         <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
 
         <jacoco-class-line-covered-ratio>0.50</jacoco-class-line-covered-ratio>
         <jacoco-class-instruction-covered-ratio>0.80</jacoco-class-instruction-covered-ratio>
         <jacoco-class-missed-count-maximum>0</jacoco-class-missed-count-maximum>
         <java.version>1.8</java.version>
+        <pitest.coverage>0</pitest.coverage>
+        <pitest.mutation>0</pitest.mutation>
+        <pitest.skip>false</pitest.skip>
+        <pitest.failWhenNoMutations>true</pitest.failWhenNoMutations>
     </properties>
 
     <developers>
@@ -80,32 +81,6 @@
             <organizationUrl>https://github.com/kemitix/</organizationUrl>
         </developer>
     </developers>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.spring.platform</groupId>
-                <artifactId>platform-bom</artifactId>
-                <version>${spring-platform.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-releasetrain</artifactId>
-                <version>${spring-data.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -204,11 +179,6 @@
                 <enabled>false</enabled>
             </releases>
         </pluginRepository>
-        <pluginRepository>
-            <id>sevntu-maven</id>
-            <name>sevntu-maven</name>
-            <url>http://sevntu-checkstyle.github.io/sevntu.checkstyle/maven2</url>
-        </pluginRepository>
     </pluginRepositories>
 
     <build>
@@ -223,10 +193,13 @@
                     <execution>
                         <phase>verify</phase>
                         <goals>
-                            <goal>${kemitix-checkstyle-ruleset.level}</goal>
+                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <level>${kemitix-checkstyle-ruleset.level}</level>
+                </configuration>
             </plugin><!-- kemitix-checkstyle-ruleset-maven-plugin -->
             <plugin>
                 <groupId>net.kemitix</groupId>
@@ -393,6 +366,28 @@
                     </execution>
                 </executions>
             </plugin><!-- highwheel-maven -->
+
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest.version}</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skip>${pitest.skip}</skip>
+                    <timestampedReports>false</timestampedReports>
+                    <excludedClasses>*.Immutable*</excludedClasses>
+                    <coverageThreshold>${pitest.coverage}</coverageThreshold>
+                    <mutationThreshold>${pitest.mutation}</mutationThreshold>
+                    <failWhenNoMutations>${pitest.failWhenNoMutations}</failWhenNoMutations>
+                </configuration>
+            </plugin><!-- pitest-maven -->
         </plugins>
     </build>
 
@@ -422,6 +417,18 @@
                     <linkXRef>true</linkXRef>
                 </configuration>
             </plugin><!-- maven-pmd-plugin -->
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin><!-- pitest-maven -->
         </plugins>
     </reporting>
 
