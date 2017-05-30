@@ -60,12 +60,17 @@
         <huntbugs.version>0.0.11</huntbugs.version>
         <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
         <highwheel-maven.version>1.2</highwheel-maven.version>
+        <pitest.version>1.2.0</pitest.version>
         <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
 
         <jacoco-class-line-covered-ratio>0.50</jacoco-class-line-covered-ratio>
         <jacoco-class-instruction-covered-ratio>0.80</jacoco-class-instruction-covered-ratio>
         <jacoco-class-missed-count-maximum>0</jacoco-class-missed-count-maximum>
         <java.version>1.8</java.version>
+        <pitest.coverage>0</pitest.coverage>
+        <pitest.mutation>0</pitest.mutation>
+        <pitest.skip>false</pitest.skip>
+        <pitest.failWhenNoMutations>true</pitest.failWhenNoMutations>
     </properties>
 
     <developers>
@@ -361,6 +366,28 @@
                     </execution>
                 </executions>
             </plugin><!-- highwheel-maven -->
+
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest.version}</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skip>${pitest.skip}</skip>
+                    <timestampedReports>false</timestampedReports>
+                    <excludedClasses>*.Immutable*</excludedClasses>
+                    <coverageThreshold>${pitest.coverage}</coverageThreshold>
+                    <mutationThreshold>${pitest.mutation}</mutationThreshold>
+                    <failWhenNoMutations>${pitest.failWhenNoMutations}</failWhenNoMutations>
+                </configuration>
+            </plugin><!-- pitest-maven -->
         </plugins>
     </build>
 
@@ -390,6 +417,18 @@
                     <linkXRef>true</linkXRef>
                 </configuration>
             </plugin><!-- maven-pmd-plugin -->
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin><!-- pitest-maven -->
         </plugins>
     </reporting>
 
