@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.0.0
+-----
+
+* BREAKING: Remove Spring Dependency Management
+* Upgrade kemitix-checkstyle-ruleset to 3.1.0
+* Add deploy to nexus from Travis CI
+* Add Pitest Mutation testing
+
 2.8.0
 -----
 
