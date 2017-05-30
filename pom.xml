@@ -174,11 +174,6 @@
                 <enabled>false</enabled>
             </releases>
         </pluginRepository>
-        <pluginRepository>
-            <id>sevntu-maven</id>
-            <name>sevntu-maven</name>
-            <url>http://sevntu-checkstyle.github.io/sevntu.checkstyle/maven2</url>
-        </pluginRepository>
     </pluginRepositories>
 
     <build>
