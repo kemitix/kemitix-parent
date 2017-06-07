@@ -26,10 +26,6 @@
 
     <inceptionYear>2015</inceptionYear>
 
-    <prerequisites>
-        <maven>3.0.4</maven>
-    </prerequisites>
-
     <licenses>
         <license>
             <name>The MIT License (MIT)</name>
@@ -73,6 +69,8 @@
         <pitest.skip>false</pitest.skip>
         <pitest.failWhenNoMutations>true</pitest.failWhenNoMutations>
         <versions.version>2.4</versions.version>
+        <required-maven.version>3.0.4</required-maven.version>
+        <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
     </properties>
 
     <developers>
@@ -219,6 +217,31 @@
                     </execution>
                 </executions>
             </plugin><!-- digraph-dependency-maven-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${maven-enforcer-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>display-info</goal>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <rules>
+                        <requireMavenVersion>
+                            <version>${required-maven.version}</version>
+                        </requireMavenVersion>
+                        <requireJavaVersion>
+                            <version>${java.version}</version>
+                        </requireJavaVersion>
+                    </rules>
+                </configuration>
+            </plugin><!-- maven-enforcer-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>

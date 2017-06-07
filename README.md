@@ -27,6 +27,8 @@ desired value.
 * lombok.version
 * digraph-dependency.version
 * digraph-dependency.basePackage
+* required-maven.version
+* maven-enforcer-plugin.version
 * maven-javadoc-plugin.version
 * maven-source-plugin.version
 * maven-gpg-plugin.version
@@ -44,6 +46,7 @@ desired value.
 * jacoco-class-instruction-covered-ratio
 * jacoco-class-missed-count-maximum
 * java.version
+* versions.version
 
 ## Checkstyle
 
@@ -65,6 +68,16 @@ following values to select a less-strict ruleset:
 * 4-tweaks
 * 5-complexity
 
+## Maven Enforcer Plugin
+
+Ensures that a suitable version of Maven is being used.
+
+Runs it's `display-info` and `enforce` goals during the `validate` phase.
+
+### Configuration
+
+* requireMavenVersion: ${required-maven.version}
+
 ## Maven Compiler Plugin
 
 The [Maven Compiler Plugin](https://maven.apache.org/plugins/maven-compiler-plugin/)
@@ -76,8 +89,9 @@ Ref: [compile:compile](https://maven.apache.org/plugins/maven-compiler-plugin/co
 
 * showDeprecation: true
 * showWarnings: true
-* source: 1.8
-* target: 1.8
+* source: ${java.version}
+* target: ${java.version}
+* encoding: ${project.build.sourceEncoding}
 
 ## Maven Surefire Plugin
 
