@@ -71,6 +71,8 @@
         <pitest.mutation>0</pitest.mutation>
         <pitest.skip>false</pitest.skip>
         <pitest.failWhenNoMutations>true</pitest.failWhenNoMutations>
+
+	<versions.version>2.4</versions.version>
     </properties>
 
     <developers>
@@ -388,6 +390,11 @@
                     <failWhenNoMutations>${pitest.failWhenNoMutations}</failWhenNoMutations>
                 </configuration>
             </plugin><!-- pitest-maven -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions.version}</version>
+            </plugin><!-- versions-maven-plugin -->
         </plugins>
     </build>
 
@@ -429,6 +436,20 @@
                     </reportSet>
                 </reportSets>
             </plugin><!-- pitest-maven -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                            <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin><!-- versions-maven-plugin -->
         </plugins>
     </reporting>
 
