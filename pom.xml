@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <kemitix.build.directory>target</kemitix.build.directory>
-        <kemitix-checkstyle-ruleset.version>3.1.0</kemitix-checkstyle-ruleset.version>
+        <kemitix-checkstyle-ruleset.version>3.2.0</kemitix-checkstyle-ruleset.version>
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
 
         <lombok.version>1.16.16</lombok.version>
