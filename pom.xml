@@ -225,17 +225,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>${maven-clean-plugin.version}</version>
-            </plugin>
+            </plugin><!-- maven-clean-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>${maven-install-plugin.version}</version>
-            </plugin>
+            </plugin><!-- maven-install-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>${maven-site-plugin.version}</version>
-            </plugin>
+            </plugin><!-- maven-site-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -251,13 +251,11 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin><!-- maven-compiler-plugin -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
             </plugin><!-- maven-surefire-plugin -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
@@ -277,7 +275,6 @@
                     </execution>
                 </executions>
             </plugin><!-- maven-failsafe-plugin -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -299,7 +296,6 @@
                     </execution>
                 </executions>
             </plugin><!-- maven-pmd-plugin -->
-
             <plugin>
                 <groupId>one.util</groupId>
                 <artifactId>huntbugs-maven-plugin</artifactId>
@@ -313,7 +309,6 @@
                     </execution>
                 </executions>
             </plugin><!-- huntbugs-maven-plugin -->
-
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -371,7 +366,6 @@
                     </rules>
                 </configuration>
             </plugin><!-- jacoco-maven-plugin -->
-
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>highwheel-maven</artifactId>
@@ -385,7 +379,6 @@
                     </execution>
                 </executions>
             </plugin><!-- highwheel-maven -->
-
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
