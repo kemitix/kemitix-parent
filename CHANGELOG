@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.1.0
+-----
+
+* Upgrade kemitix-checkstyle-ruleset to 3.3.0
+* Upgrade lombok to 1.16.18
+* Replace `prerequisite`
+
 3.0.0
 -----
 
