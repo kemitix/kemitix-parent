@@ -6,7 +6,7 @@ CHANGELOG
 
 * Upgrade kemitix-checkstyle-ruleset to 3.3.0
 * Upgrade lombok to 1.16.18
-* Replace `prerequisite`
+* Replace `prerequisites/maven` with `maven-enforcer-plugin`
 
 3.0.0
 -----
