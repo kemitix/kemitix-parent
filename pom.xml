@@ -43,9 +43,7 @@
         <kemitix.build.directory>target</kemitix.build.directory>
         <kemitix-checkstyle-ruleset.version>3.2.0</kemitix-checkstyle-ruleset.version>
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
-
-        <lombok.version>1.16.16</lombok.version>
-
+        <lombok.version>1.16.18</lombok.version>
         <digraph-dependency.version>0.9.0</digraph-dependency.version>
         <digraph-dependency.basePackage>net.kemitix</digraph-dependency.basePackage>
 
@@ -425,7 +423,6 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco-maven-plugin.version}</version>
             </plugin><!-- jacoco-maven-plugin -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
