@@ -5,7 +5,7 @@
 
     <groupId>net.kemitix</groupId>
     <artifactId>kemitix-parent</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <packaging>pom</packaging>
 
     <name>Kemitix Parent</name>
@@ -26,10 +26,6 @@
 
     <inceptionYear>2015</inceptionYear>
 
-    <prerequisites>
-        <maven>3.0.4</maven>
-    </prerequisites>
-
     <licenses>
         <license>
             <name>The MIT License (MIT)</name>
@@ -41,14 +37,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <kemitix.build.directory>target</kemitix.build.directory>
-        <kemitix-checkstyle-ruleset.version>3.1.0</kemitix-checkstyle-ruleset.version>
+        <kemitix-checkstyle-ruleset.version>3.3.0</kemitix-checkstyle-ruleset.version>
         <kemitix-checkstyle-ruleset.level>5-complexity</kemitix-checkstyle-ruleset.level>
-
-        <lombok.version>1.16.16</lombok.version>
-
+        <lombok.version>1.16.18</lombok.version>
         <digraph-dependency.version>0.9.0</digraph-dependency.version>
         <digraph-dependency.basePackage>net.kemitix</digraph-dependency.basePackage>
 
+        <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+        <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+        <maven-site-plugin.version>3.6</maven-site-plugin.version>
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
@@ -71,6 +68,9 @@
         <pitest.mutation>0</pitest.mutation>
         <pitest.skip>false</pitest.skip>
         <pitest.failWhenNoMutations>true</pitest.failWhenNoMutations>
+        <versions.version>2.4</versions.version>
+        <required-maven.version>3.0.4</required-maven.version>
+        <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
     </properties>
 
     <developers>
@@ -219,6 +219,46 @@
             </plugin><!-- digraph-dependency-maven-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${maven-enforcer-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>display-info</goal>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <rules>
+                        <requireMavenVersion>
+                            <version>${required-maven.version}</version>
+                        </requireMavenVersion>
+                        <requireJavaVersion>
+                            <version>${java.version}</version>
+                        </requireJavaVersion>
+                    </rules>
+                </configuration>
+            </plugin><!-- maven-enforcer-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven-clean-plugin.version}</version>
+            </plugin><!-- maven-clean-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${maven-install-plugin.version}</version>
+            </plugin><!-- maven-install-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven-site-plugin.version}</version>
+            </plugin><!-- maven-site-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
@@ -232,13 +272,11 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin><!-- maven-compiler-plugin -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
             </plugin><!-- maven-surefire-plugin -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
@@ -258,7 +296,6 @@
                     </execution>
                 </executions>
             </plugin><!-- maven-failsafe-plugin -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -280,7 +317,6 @@
                     </execution>
                 </executions>
             </plugin><!-- maven-pmd-plugin -->
-
             <plugin>
                 <groupId>one.util</groupId>
                 <artifactId>huntbugs-maven-plugin</artifactId>
@@ -294,7 +330,6 @@
                     </execution>
                 </executions>
             </plugin><!-- huntbugs-maven-plugin -->
-
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -352,7 +387,6 @@
                     </rules>
                 </configuration>
             </plugin><!-- jacoco-maven-plugin -->
-
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>highwheel-maven</artifactId>
@@ -366,7 +400,6 @@
                     </execution>
                 </executions>
             </plugin><!-- highwheel-maven -->
-
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
@@ -388,6 +421,11 @@
                     <failWhenNoMutations>${pitest.failWhenNoMutations}</failWhenNoMutations>
                 </configuration>
             </plugin><!-- pitest-maven -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions.version}</version>
+            </plugin><!-- versions-maven-plugin -->
         </plugins>
     </build>
 
@@ -408,7 +446,6 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco-maven-plugin.version}</version>
             </plugin><!-- jacoco-maven-plugin -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -429,6 +466,20 @@
                     </reportSet>
                 </reportSets>
             </plugin><!-- pitest-maven -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                            <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin><!-- versions-maven-plugin -->
         </plugins>
     </reporting>
 

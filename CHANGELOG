@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.1.0
+-----
+
+* Upgrade `kemitix-checkstyle-ruleset` to 3.3.0
+* Upgrade `lombok` to 1.16.18
+* Replace `prerequisites/maven` with `maven-enforcer-plugin`
+* Explicitly specify version for all plugins
+* Upgrade `versions-maven-plugin` to 2.4 and enable reporting
+* travis-ci: deploy master only after PR is merged
+
 3.0.0
 -----
 
