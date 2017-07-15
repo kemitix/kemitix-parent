@@ -8,7 +8,7 @@ install: true
 script: "./mvnw clean install"
 deploy:
   provider: script
-  script: travis-ci/travis-deploy.sh
+  script: sh travis-ci/travis-deploy.sh
   on:
     branch: master
 env:
