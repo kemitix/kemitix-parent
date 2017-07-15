@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+3.1.1
+-----
+
+* Avoid exec permission on deploy
+
 3.1.0
 -----
 
