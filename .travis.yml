@@ -6,8 +6,11 @@ cache:
   - "$HOME/.m2"
 install: true
 script: "./mvnw clean install"
-after_success:
-- "sh ./travis-ci/travis-deploy.sh"
+deploy:
+  provider: script
+  script: travis-ci/travis-deploy.sh
+  on:
+    branch: master
 env:
   global:
   - secure: IZu0VGBsjxwaWGiBh0muZTbxE25aDubsgNGuCp/6tHRtOA73tIwLOeeINJd4iblMvLFg6SrVW7wMhO2N12Pxt5v/czjt3q+t34faXlKP9NK4DjwT2awf96oafVVn3yK0e8S60YwOeSzutF0pEMhGa2nQCmEsAyTcbuavBABeXPKP9QwO9ByywFLZIsbg2uwU1JJALQeyHgYl8DVag2UdVUBfQ2TBB3VaCcwiDOmd/V7Ks2BtzGE4mGDJOWiBrOsANlKwYMhHqcgzH29KeiDvNs8JU8YfizCeQA4mOAUut5A+u+2dXeqdrqL9Nch618tFb73ty4l/rlInmIXRnuV/JvWR8ZnX2N1ngJGe3GOCnA+oSHDDkdW4aRKvcrs8hnKmSew/OV9+locRvYIOO3tJq4A2Rc0izF5jSn+i+yUJpaZlpKiuNSNs0eRTtUggUAQn61c+1In4aWSofsMpObD/KD7K/N5oi71cznxHFHl98QAFlHRza1siYVPAvtINbG04ijChYPFSH527+2XMbis4BhyqoCYH7+xa4qsLriOVuvodomQCaB+5lIiiDYC/N7zesz167Dgv/Gdxfk8NxKjr8XO0dPI3303SspQi2aR9EHpvZF7TkABx/7nzxq04V1u4bHT+EBFyT3Cg+SFiAv3MAbYal2SuzNSAGoRShTySnEs=
