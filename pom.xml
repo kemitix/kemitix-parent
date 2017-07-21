@@ -71,6 +71,7 @@
         <versions.version>2.4</versions.version>
         <required-maven.version>3.0.4</required-maven.version>
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
+        <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
     </properties>
 
     <developers>
@@ -150,6 +151,12 @@
                         <artifactId>maven-deploy-plugin</artifactId>
                         <version>${maven-deploy-plugin.version}</version>
                     </plugin><!-- maven deploy-plugin -->
+
+                    <plugin>
+                        <groupId>org.eluder.coveralls</groupId>
+                        <artifactId>coveralls-maven-plugin</artifactId>
+                        <version>${coveralls-maven-plugin.version}</version>
+                    </plugin>
                 </plugins>
             </build>
         </profile><!-- release -->
