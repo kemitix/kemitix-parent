@@ -47,6 +47,7 @@ desired value.
 * jacoco-class-missed-count-maximum
 * java.version
 * versions.version
+* coveralls-maven-plugin.version
 
 ## Checkstyle
 
@@ -263,6 +264,25 @@ generates a DOT file diagram showing the dependencies between packages in a proj
 The plugin will generate the `target/digraph.dot` file during the `validate` phase.
 
 Set the `digraph-dependency.basePackage` property to the root package to graph.
+
+## Coveralls
+
+The [Coveralls Maven Plugin](https://github.com/trautonen/coveralls-maven-plugin)
+publishes coverage data to coveralls.io.
+
+### Configuration
+
+The plugin is not configured to run automatically. It must be initiated manually:
+
+```shell
+mvn -P release test jacoco:report coveralls:report
+```
+
+#### Requirements
+
+In order to use the plugin:
+
+* *must* enable the `release` profile
 
 # Distribution Management
 
