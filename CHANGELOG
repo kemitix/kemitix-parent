@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+3.2.3
+-----
+
+* .travis-support: fixed typo
+
 3.2.2
 -----
 
