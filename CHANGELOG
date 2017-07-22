@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+3.2.4
+-----
+
+* Make coveralls plugin available in default profile
+
 3.2.3
 -----
 

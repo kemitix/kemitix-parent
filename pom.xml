@@ -5,7 +5,7 @@
 
     <groupId>net.kemitix</groupId>
     <artifactId>kemitix-parent</artifactId>
-    <version>3.2.3</version>
+    <version>3.2.4</version>
     <packaging>pom</packaging>
 
     <name>Kemitix Parent</name>
@@ -151,12 +151,6 @@
                         <artifactId>maven-deploy-plugin</artifactId>
                         <version>${maven-deploy-plugin.version}</version>
                     </plugin><!-- maven deploy-plugin -->
-
-                    <plugin>
-                        <groupId>org.eluder.coveralls</groupId>
-                        <artifactId>coveralls-maven-plugin</artifactId>
-                        <version>${coveralls-maven-plugin.version}</version>
-                    </plugin>
                 </plugins>
             </build>
         </profile><!-- release -->
@@ -303,6 +297,11 @@
                     </execution>
                 </executions>
             </plugin><!-- maven-failsafe-plugin -->
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>${coveralls-maven-plugin.version}</version>
+            </plugin><!-- coveralls-maven-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
