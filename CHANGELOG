@@ -5,6 +5,9 @@ CHANGELOG
 -----
 
 * Use `kemitix-quality-maven-plugin` to replace some plugins
+* Specify version `2.9` for `maven-project-info-reports-plugin`
+* Upgrade `maven-{surefire,failsafe}-plugin` to `2.20.1`
+* Upgrade `maven-compiler-plugin` to `3.7.0`
 
 3.2.4
 -----
