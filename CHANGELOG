@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+3.3.0
+-----
+
+* Use `kemitix-quality-maven-plugin` to replace some plugins
+
 3.2.4
 -----
 
