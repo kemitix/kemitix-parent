@@ -18,9 +18,12 @@
                 <tiles>
                      <tile>net.kemitix.tiles:compiler-tile:${kemitix-tiles.version}</tile>
                      <tile>net.kemitix.tiles:checkstyle-tile:${kemitix-tiles.version}</tile>
+                     <tile>net.kemitix.tiles:release-tile:${kemitix-tiles.version}</tile>
                </tiles>
             </configuration>
         </plugin>
     </plugins>
 </build>
 ```
+
+Enabling the plugins in the `release-tile` requires the `release` profile to be active.

@@ -14,6 +14,7 @@
         <module>checkstyle</module>
         <module>compiler</module>
         <module>tiles-parent</module>
+        <module>release</module>
     </modules>
 
 </project>
