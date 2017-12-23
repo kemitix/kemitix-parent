@@ -20,6 +20,7 @@
         <module>coverage</module>
         <module>testing</module>
         <module>maven-plugins</module>
+        <module>pitest</module>
     </modules>
 
 </project>
