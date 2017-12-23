@@ -19,6 +19,7 @@
         <module>enforcer</module>
         <module>coverage</module>
         <module>testing</module>
+        <module>maven-plugins</module>
     </modules>
 
 </project>
