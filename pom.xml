@@ -22,6 +22,7 @@
         <module>maven-plugins</module>
         <module>pitest</module>
         <module>huntbugs</module>
+        <module>pmd</module>
     </modules>
 
 </project>
