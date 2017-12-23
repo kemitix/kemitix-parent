@@ -22,6 +22,7 @@
                          <tile>net.kemitix.tiles:checkstyle-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:digraph-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:testing-tile:${kemitix-tiles.version}</tile>
+                         <tile>net.kemitix.tiles:coverage-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:release-tile:${kemitix-tiles.version}</tile>
                    </tiles>
                 </configuration>
