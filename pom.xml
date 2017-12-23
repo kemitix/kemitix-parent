@@ -21,6 +21,7 @@
         <module>testing</module>
         <module>maven-plugins</module>
         <module>pitest</module>
+        <module>huntbugs</module>
     </modules>
 
 </project>

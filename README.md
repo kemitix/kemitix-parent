@@ -21,6 +21,7 @@
                          <tile>net.kemitix.tiles:enforcer-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:compiler-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:checkstyle-tile:${kemitix-tiles.version}</tile>
+                         <tile>net.kemitix.tiles:huntbugs-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:digraph-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:testing-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:coverage-tile:${kemitix-tiles.version}</tile>
