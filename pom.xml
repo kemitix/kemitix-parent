@@ -16,6 +16,7 @@
         <module>compiler</module>
         <module>release</module>
         <module>digraph</module>
+        <module>enforcer</module>
     </modules>
 
 </project>
