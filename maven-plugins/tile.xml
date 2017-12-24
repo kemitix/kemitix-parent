@@ -4,6 +4,7 @@
         <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
         <maven-site-plugin.version>3.6</maven-site-plugin.version>
+        <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
         <versions.version>2.4</versions.version>
     </properties>
     <build>
@@ -28,10 +29,28 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${versions.version}</version>
             </plugin><!-- versions-maven-plugin-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>${maven-jxr-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jxr</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin><!-- maven-jxr-plugin -->
         </plugins>
     </build>
     <reporting>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>${maven-jxr-plugin.version}</version>
+            </plugin><!-- maven-jxr-plugin -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
