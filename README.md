@@ -17,6 +17,10 @@
                 <extensions>true</extensions>
                 <configuration>
                     <tiles>
+                         <tile>net.kemitix.tiles:all-tiles:${kemitix-tiles.version}</tile>
+
+                         <!-- or -->
+
                          <tile>net.kemitix.tiles:maven-plugins-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:enforcer-tile:${kemitix-tiles.version}</tile>
                          <tile>net.kemitix.tiles:compiler-tile:${kemitix-tiles.version}</tile>

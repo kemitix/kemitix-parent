@@ -23,6 +23,7 @@
         <module>pitest</module>
         <module>huntbugs</module>
         <module>pmd</module>
+        <module>all</module>
     </modules>
 
 </project>
