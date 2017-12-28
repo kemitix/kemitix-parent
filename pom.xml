@@ -8,8 +8,6 @@
     <version>5.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <description>Common Parent with preconfigured plugins.</description>
-
     <issueManagement>
         <url>https://github.com/kemitix/kemitix-parent/issues</url>
         <system>GitHub Issues</system>
