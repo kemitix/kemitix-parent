@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+5.0.0
+-----
+
+* [BREAKING] Split most configuration out into `kemitix-maven-tiles`
+* [BREAKING] No longer provide lombok as a dependency
+* Add tiles 0.1.0
+
 4.0.0
 -----
 
