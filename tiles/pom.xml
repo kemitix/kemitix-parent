@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.kemitix</groupId>
+        <artifactId>kemitix-parent</artifactId>
+        <version>5.0.0-SNAPSHOT</version>
+    </parent>
+    <groupId>net.kemitix.tiles</groupId>
+    <artifactId>kemitix-maven-tiles</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>tiles-parent</module>
+        <module>checkstyle</module>
+        <module>compiler</module>
+        <module>release</module>
+        <module>digraph</module>
+        <module>enforcer</module>
+        <module>coverage</module>
+        <module>testing</module>
+        <module>maven-plugins</module>
+        <module>pitest</module>
+        <module>huntbugs</module>
+        <module>pmd</module>
+        <module>all</module>
+    </modules>
+
+</project>
