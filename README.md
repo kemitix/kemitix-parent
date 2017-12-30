@@ -46,7 +46,7 @@ Maven Tiles for preconfigured plugins. These can be used independently of the `k
 <project>
     <properties>
         <tiles-maven-plugin.version>2.10</tiles-maven-plugin.version>
-        <kemitix-tiles.version>0.1.0-SNAPSHOT</kemitix-tiles.version>
+        <kemitix-tiles.version>0.1.0</kemitix-tiles.version>
     </properties>
     <build>
         <plugins>
