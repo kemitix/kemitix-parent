@@ -5,8 +5,11 @@
 
     <groupId>net.kemitix</groupId>
     <artifactId>kemitix-parent</artifactId>
-    <version>5.0.1</version>
+    <version>5.0.2</version>
     <packaging>pom</packaging>
+
+    <name>Kemitix Parent</name>
+    <description>A parent POM for my own personal projects</description>
 
     <issueManagement>
         <url>https://github.com/kemitix/kemitix-parent/issues</url>
