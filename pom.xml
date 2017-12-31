@@ -44,10 +44,6 @@
         </developer>
     </developers>
 
-    <modules>
-        <module>tiles</module>
-    </modules>
-
     <distributionManagement>
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
