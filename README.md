@@ -24,9 +24,17 @@ The POM defines the following items:
 * `inceptionYear`
 * `licenses`
 * `developers`
-* `distributionManagement`
-
 The POM sets the following properties:
 
 * `project.reporting.outputEncoding` as `UTF-8`
 * `java.version` as `1.8`
+
+### Profile `release`
+
+#### GPG Artifact Signing
+
+Artifacts will be GPG signed during the `package` phase when the `release` profile is enabled.
+
+#### Distribution Management
+
+The Nexus Sonatype repositories are declared within `distributionManagement` when the `release` profile is enableds.
