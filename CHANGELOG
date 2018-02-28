@@ -1,6 +1,18 @@
 CHANGELOG
 =========
 
+5.0.3
+-----
+
+* Add javadoc, source and nexus-staging plugins
+* Add Jenkinsfile
+* Remove travis-support for deployment
+
+5.0.2
+-----
+
+* Add pom name and description
+
 5.0.1
 -----
 
