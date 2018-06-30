@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+5.1.1
+-----
+
+* Upgrade `maven-javadoc-plugin` to 3.0.1
+* Add `--verbose` and `--no-tty` args to `maven-gpg-plugin`
+
 5.1.0
 -----
 

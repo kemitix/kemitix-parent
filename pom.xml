@@ -93,7 +93,9 @@
                         <configuration>
                             <passphrase>${gpg.passphrase}</passphrase>
                             <gpgArguments>
+                                <arg>--verbose</arg>
                                 <arg>--batch</arg>
+                                <arg>--no-tty</arg>
                                 <arg>--pinentry-mode</arg>
                                 <arg>loopback</arg>
                             </gpgArguments>
