@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+5.1.0
+-----
+
+* Add `maven-javadoc-plugin` 3.0.0
+* Add `maven-source-plugin` 3.0.1
+* Add `nexus-staging-maven-plugin` 1.6.8
+* Add `--batch --pinentry-mode loopback` to gpg command line
+
 5.0.3
 -----
 
