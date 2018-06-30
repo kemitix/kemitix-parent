@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Install') {
             steps {
-                withMaven(maven: 'maven', jdk: 'JDK 8') {
+                withMaven(maven: 'maven', jdk: 'JDK 1.8') {
                     sh "${mvn} -DskipTests install"
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
                 }
             }
             steps {
-                withMaven(maven: 'maven', jdk: 'JDK 8') {
+                withMaven(maven: 'maven', jdk: 'JDK 1.8') {
                     sh "${mvn} --activate-profiles release deploy"
                 }
             }
