@@ -1,5 +1,5 @@
 final String mvn = "mvn --batch-mode --update-snapshots --errors"
-final dependenciesSupportJDK = 10
+final Integer dependenciesSupportJDK = 10
 
 pipeline {
     agent any
