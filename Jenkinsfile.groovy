@@ -1,4 +1,4 @@
-final String mvn = "mvn --batch-mode --update-snapshots --errors --debug"
+final String mvn = "mvn --batch-mode --update-snapshots --errors"
 final dependenciesSupportJDK = 10
 
 pipeline {
