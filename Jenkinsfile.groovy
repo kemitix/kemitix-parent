@@ -1,3 +1,4 @@
+final String publicRepo = 'https://github.com/kemitix/'
 final String mvn = "mvn --batch-mode --update-snapshots --errors"
 final Integer dependenciesSupportJDK = 10
 
@@ -23,10 +24,10 @@ pipeline {
                 }
             }
         }
-        stage('Deploy (release on gitlab)') {
+        stage('Deploy (published release branch)') {
             when {
                 expression {
-                    (branchStartsWith('release/') && isPublished())
+                    (branchStartsWith('release/') && isPublished(publicRepo))
                 }
             }
             steps {
@@ -58,10 +59,11 @@ private boolean branchStartsWith(String branchName) {
     startsWith(env.GIT_BRANCH, branchName)
 }
 
-private boolean isPublished() {
-    startsWith(env.GIT_URL, 'https://')
+private boolean isPublished(repo) {
+    startsWith(env.GIT_URL, repo)
 }
 
 private boolean startsWith(String value, String match) {
     value != null && value.startsWith(match)
 }
+
