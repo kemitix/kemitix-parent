@@ -54,7 +54,35 @@
 
     <profiles>
         <profile>
+            <id>verify</id>
+            <!--
+            The verify profile is intended to be used only when the verify phase is initiated from Jenkins.
+            The test phase should have completed successfully as part of a separate mvn invocation.
+            The following properties disable some of the plugins from executing again during this verify phase.
+            Performing "mvn -P verify clean verify" will fail. Instead: "mvn clean test && mvn -P verify verify"
+            -->
+            <properties>
+                <maven.main.skip>true</maven.main.skip>
+                <skipTests>true</skipTests>
+                <jacoco.skip>true</jacoco.skip>
+            </properties>
+        </profile><!-- verify -->
+
+        <profile>
             <id>release</id>
+            <!--
+            The release profile is intended to be used only when the deploy phase is initiated from Jenkins.
+            The install phase should have completed successfully as part of a separate mvn invocation.
+            The following properties disable some of the plugins from executing again during this deploy phase.
+            Performing "mvn -P release clean deploy" will fail. Instead: "mvn clean install && mvn -P release deploy"
+            -->
+            <properties>
+                <maven.main.skip>true</maven.main.skip>
+                <skipTests>true</skipTests>
+                <jacoco.skip>true</jacoco.skip>
+                <skipITs>true</skipITs>
+                <maven.install.skip>true</maven.install.skip>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -148,7 +176,7 @@
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
-        </profile>
-    </profiles><!-- release -->
+        </profile><!-- release -->
+    </profiles>
 
 </project>
