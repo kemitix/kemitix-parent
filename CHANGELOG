@@ -4,7 +4,7 @@ CHANGELOG
 5.1.2
 -----
 
-* Explicitly disable `maven-deploy`plugin`
+* Explicitly disable `maven-deploy-plugin`
 
 5.1.1
 -----
