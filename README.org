@@ -1,0 +1,80 @@
+* KEMITIX-PARENT
+
+** A parent POM for my own personal projects.
+
+   [[https://oss.sonatype.org/content/repositories/releases/net/kemitix/kemitix-parent/][[[https://img.shields.io/nexus/r/https/oss.sonatype.org/net.kemitix/kemitix-parent.svg?style=for-the-badge]]]]
+   [[https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.kemitix%22%20AND%20a%3A%22kemitix-parent%22][[[https://img.shields.io/maven-central/v/net.kemitix/kemitix-parent.svg?style=for-the-badge]]]]
+
+** Usage
+
+   Use as a parent pom.
+
+   #+BEGIN_SRC xml
+     <parent>
+       <groupId>net.kemitix</groupId>
+       <artifactId>kemitix-parent</artifactId>
+       <version>RELEASE</version>
+     </parent>
+   #+END_SRC
+
+** Contents
+
+   The POM defines the following items:
+
+-  =issueManagement=
+-  =scm=
+-  =url=
+-  =inceptionYear=
+-  =licenses=
+-  =developers=
+
+  In your child pom you should override, at least, the =issueManagement=, =scm=,
+  =url= and =inceptionYear= sections.
+
+** Properties
+
+   The POM sets the following properties:
+
+-  =project.reporting.outputEncoding= as =UTF-8=
+-  =java.version= as =1.8=
+
+** Profile =release=
+
+   The =release= profile is for use when deploying your project.
+
+   It configures the following plugins:
+
+**** =maven-javadoc-plugin=
+
+     Executes the =jar= goal during the =package= phase.
+
+**** =maven-source-plugin=
+
+     Executes the =jar-no-fork= goal during the =package= phase.
+
+**** =maven-gpg-plugin=
+
+     Executes the =sign= goal during the =package= phase.
+
+     The default =gpg= key will be used with the password defined in the
+     =gpg.passphrase= property.
+     
+**** =maven-deploy-plugin=
+
+     This plugin is configured to *not* run. Deployment, uploading of artifacts,
+     is handled by the =nexus-staging-maven-plugin=.
+
+**** =nexus-staging-maven-plugin=
+
+     Executes the default goals.
+
+     Uploads artifacts to the Sonatype Nexus server, https://oss.sonatype.org/,
+     leaving the artifacts in the Staging repository. From there they will need
+     to be released manually.
+
+     Authentication details are taken from the =sonatype-nexus= server in your
+     =settings.xml= file.
+
+*** Distribution Management
+
+    The Nexus Sonatype repositories are declared within =distributionManagement=.
