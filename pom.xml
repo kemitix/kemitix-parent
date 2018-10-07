@@ -5,7 +5,7 @@
 
     <groupId>net.kemitix</groupId>
     <artifactId>kemitix-parent</artifactId>
-    <version>DEV-SNAPSHOT</version>
+    <version>5.2.0</version>
     <packaging>pom</packaging>
 
     <name>Kemitix Parent</name>
