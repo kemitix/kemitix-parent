@@ -39,6 +39,7 @@
         <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+        <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     </properties>
 
@@ -110,6 +111,16 @@
                             </execution>
                         </executions>
                     </plugin><!-- maven-gpg-plugin -->
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>${maven-deploy-plugin.version}</version>
+                        <configuration>
+                            <!-- disable this plugin in favour of the nexus-staging-maven-plugin -->
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin><!-- maven-deploy-plugin -->
 
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
