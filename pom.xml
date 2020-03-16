@@ -12,17 +12,17 @@
     <description>A parent POM for my own personal projects</description>
 
     <issueManagement>
-        <url>https://gitlab.com/kemitix/kemitix-parent/issues</url>
-        <system>GitLab Issues</system>
+        <url>https://github.com/kemitix/kemitix-parent/issues</url>
+        <system>GitHub Issues</system>
     </issueManagement>
 
     <scm>
-        <url>https://gitlab.com/kemitix/kemitix-parent</url>
-        <connection>scm:git:https://gitlab.com/kemitix/kemitix-parent.git</connection>
-        <developerConnection>scm:git:git@gitlab.com:kemitix/kemitix-parent.git</developerConnection>
+        <url>https://github.com/kemitix/kemitix-parent</url>
+        <connection>scm:git:https://github.com/kemitix/kemitix-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:kemitix/kemitix-parent.git</developerConnection>
     </scm>
 
-    <url>https://gitlab.com/kemitix/kemitix-parent</url>
+    <url>https://github.com/kemitix/kemitix-parent</url>
 
     <inceptionYear>2015</inceptionYear>
 
@@ -48,7 +48,7 @@
             <name>Paul Campbell</name>
             <email>pcampbell@kemitix.net</email>
             <organization>Kemitix</organization>
-            <organizationUrl>https://gitlab.com/kemitix/</organizationUrl>
+            <organizationUrl>https://github.com/kemitix/</organizationUrl>
         </developer>
     </developers>
 
